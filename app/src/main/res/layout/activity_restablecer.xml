@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AuthActivity">
+    tools:context=".RestablecerActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -22,10 +22,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/logintextView"
+            android:id="@+id/restablecerTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="Restablecer Contraseña"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="34sp" />
@@ -36,40 +36,29 @@
             android:scrollbarSize="10dp" />
 
         <EditText
-            android:id="@+id/emailEditText"
+            android:id="@+id/emailRestablecerEdtiText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Email"
             android:inputType="textEmailAddress" />
 
-        <EditText
-            android:id="@+id/passwordEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Contraseña"
-            android:inputType="textPassword" />
-
         <Space
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_weight="1"
             android:scrollbarSize="10dp" />
+
+        <Button
+            android:onClick="send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Restablecer" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/loginButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Acceder"
-                android:textSize="12sp" />
-
-        </LinearLayout>
+            android:orientation="horizontal"/>
 
         <Space
             android:layout_width="match_parent"
@@ -83,26 +72,11 @@
             android:orientation="vertical"
             android:textAlignment="center">
 
-            <TextView
-                android:id="@+id/registrarText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Registrar"
-                android:textAlignment="center" />
-
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
                 android:layout_weight="1" />
 
-            <TextView
-                android:id="@+id/contrasenaOlvidada"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="¿Has olvidado tu contraseña?"
-                android:textAlignment="center" />
         </LinearLayout>
 
     </LinearLayout>

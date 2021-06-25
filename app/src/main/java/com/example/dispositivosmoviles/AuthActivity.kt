@@ -1,10 +1,8 @@
 package com.example.dispositivosmoviles
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -21,30 +19,7 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun setup() {
-        title = "Autenticación"
-
-        signUpButton.setOnClickListener {
-            if (emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty() )
-            {
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(emailEditText.text.toString(), passwordEditText.text.toString()).addOnCompleteListener {
-
-
-                    if (it.isSuccessful)
-                    {
-                        //showHome(it.result?.user?.email ?: "")
-                        sendEmailVerification()
-                        showAlertEmail()
-                    }
-                    else
-                    {
-                        showAlert()
-                    }
-                }
-
-
-
-            }
-        }
+        title = "Login"
 
         loginButton.setOnClickListener {
             if (emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty() )
@@ -54,6 +29,8 @@ class AuthActivity : AppCompatActivity() {
                     {
                         showHome(it.result?.user?.email ?: "")
                         //sendSignInLink(it.result?.user?.email ?: "", actionCodeSettings {  })
+                        emailEditText.text.clear()
+                        passwordEditText.text.clear()
                     }
                     else
                     {
@@ -62,27 +39,29 @@ class AuthActivity : AppCompatActivity() {
                 }
             }
         }
+
+        registrarText.setOnClickListener {
+            val signUpIntent = Intent(this, SignUpActivity::class.java)
+            startActivity(signUpIntent)
+        }
+
+        contrasenaOlvidada.setOnClickListener {
+            val contrasenaOlvidadaIntent = Intent(this, RestablecerActivity::class.java)
+            startActivity(contrasenaOlvidadaIntent)
+        }
+
     }
 
     private fun showAlert()
     {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Error")
-        builder.setMessage("Se ha producido un error")
+        builder.setMessage("Credenciales incorrectas")
         builder.setPositiveButton("Aceptar", null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }
 
-    private fun showAlertEmail()
-    {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Registro exitoso")
-        builder.setMessage("Por favor revisa tu correo para la autenticación")
-        builder.setPositiveButton("Aceptar", null)
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
-    }
 
     private fun showHome(email: String)
     {
@@ -122,16 +101,5 @@ class AuthActivity : AppCompatActivity() {
     } */
 
 
-    private fun sendEmailVerification() {
-        // [START send_email_verification]
-        val user = Firebase.auth.currentUser
 
-        user!!.sendEmailVerification()
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    Log.d(TAG, "Email sent.")
-                }
-            }
-        // [END send_email_verification]
-    }
 }
