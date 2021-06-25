@@ -24,7 +24,7 @@
             android:id="@+id/homeText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Home"
+            android:text="@string/home"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="34sp" />
@@ -37,7 +37,7 @@
             android:id="@+id/emailText"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="Correo"
+            android:text="@string/emailText"
             android:textColor="#000000"
             android:textSize="18dp" />
 
@@ -45,7 +45,7 @@
             android:id="@+id/emailTextView"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="Email"
+            android:text="@string/emailTextView"
             android:textSize="18dp" />
 
         <Space
@@ -56,7 +56,7 @@
             android:id="@+id/logOutButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cerrar sesión" />
+            android:text="@string/logOutButton" />
 
         <LinearLayout
             android:layout_width="match_parent"

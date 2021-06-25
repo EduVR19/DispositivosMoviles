@@ -1,5 +1,6 @@
-package com.example.dispositivosmoviles
+    package com.example.dispositivosmoviles
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,6 +17,7 @@ class AuthActivity : AppCompatActivity() {
 
         // Setup
         setup()
+        languages();
     }
 
     private fun setup() {
@@ -99,7 +101,18 @@ class AuthActivity : AppCompatActivity() {
             }
         // [END auth_send_sign_in_link]
     } */
+    lateinit var MyPreference: MyPreference
+    override fun attachBaseContext(newBase: Context?) {
+        MyPreference = MyPreference(newBase!!)
+        val lang = MyPreference.getLoginCount();
 
+        super.attachBaseContext(MyContextWrapper.wrap(newBase,lang))
 
+    }
+    private fun languages(){
+        textViewLanguage.setOnClickListener{
+            startActivity(Intent(this,SettingsActivity::class.java))
+        }
+    }
 
 }

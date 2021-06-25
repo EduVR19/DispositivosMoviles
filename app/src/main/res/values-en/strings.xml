@@ -1,0 +1,28 @@
+<resources>
+    <string name="DispositivosMoviles">DispositivosMoviles</string>
+    <!-- Esto es la pantalla Auth-->
+    <string name="login">Login</string>
+    <string name="emailHint">Email</string>
+    <string name="passHint">Password</string>
+    <string name="logInButton">Log in</string>
+    <string name="register">Register</string>
+    <string name="forgotPassword">Forgot email?</string>
+    <string name="changeLanguage">Change language</string>
+
+    <!-- Esto es la pantalla home-->
+    <string name="home">Home</string>
+    <string name="emailText">Email</string>
+    <string name="emailTextView">Email</string>
+    <string name="logOutButton">Log out</string>
+
+    <!-- Esto es la pantalla reestablecer-->
+    <string name="reset">Reset password</string>
+    <string name="resetButton">Reset</string>
+
+    <!-- Esto es la pantalla Sign up -->
+    <string name="registro">Registration</string>
+    <string name="registerButton">Register</string>
+
+    <!-- Esto es la pantalla settings-->
+    <string name="changeButton">Change</string>
+</resources>
