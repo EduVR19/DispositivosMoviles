@@ -51,6 +51,14 @@
             android:hint="@string/passHint"
             android:inputType="textPassword" />
 
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Veficicación de contraseña"
+            android:inputType="textPassword" />
+
         <Space
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -72,4 +80,5 @@
         </LinearLayout>
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

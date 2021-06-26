@@ -24,14 +24,15 @@ class SignUpActivity : AppCompatActivity() {
     }
     private fun setup() {
         title = "Registro"
-
+        val pass = passwordEditText.text.trim()
+        val vpass = editTextPassword.text.trim()
         signUpButton.setOnClickListener {
+            if (pass == vpass){
             if (emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()) {
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(
                     emailEditText.text.toString(),
                     passwordEditText.text.toString()
                 ).addOnCompleteListener {
-
 
                     if (it.isSuccessful) {
                         //showHome(it.result?.user?.email ?: "")
@@ -41,9 +42,12 @@ class SignUpActivity : AppCompatActivity() {
                     } else {
                         showAlert()
                     }
+
                 }
-
-
+            }
+            }
+            else {
+                showAlert()
             }
         }
     }
