@@ -56,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Veficicación de contraseña"
+            android:hint="Verificación de contraseña"
             android:inputType="textPassword" />
 
         <Space
