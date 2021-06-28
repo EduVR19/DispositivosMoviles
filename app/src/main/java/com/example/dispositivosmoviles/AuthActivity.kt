@@ -99,7 +99,7 @@ class AuthActivity : AppCompatActivity() {
     private fun showAlert() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Error")
-        builder.setMessage("Credenciales incorrectas")
+        builder.setMessage("Se ha producido un error")
         builder.setPositiveButton("Aceptar", null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
