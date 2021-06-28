@@ -22,7 +22,9 @@
     <!-- Esto es la pantalla Sign up -->
     <string name="registro">Registration</string>
     <string name="registerButton">Register</string>
-
+    <string name="confirmPassword">Confirm password</string>
+    <string name="name">Name</string>
+    <string name="telephone">Cell phone</string>
     <!-- Esto es la pantalla settings-->
     <string name="changeButton">Change</string>
 </resources>

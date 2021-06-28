@@ -56,20 +56,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Verificación de contraseña"
+            android:hint="@string/confirmPassword"
             android:inputType="textPassword" />
 
         <EditText
             android:id="@+id/nametextview"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:hint="Nombre" />
+            android:hint="@string/name" />
 
         <EditText
             android:id="@+id/telefonotextview"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:hint="Telefono" />
+            android:hint="@string/telephone" />
 
         <Space
             android:layout_width="match_parent"
