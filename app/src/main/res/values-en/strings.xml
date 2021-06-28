@@ -27,4 +27,15 @@
     <string name="telephone">Cell phone</string>
     <!-- Esto es la pantalla settings-->
     <string name="changeButton">Change</string>
+
+    <string-array name="mensajesList">
+        <item>You are not an user</item>
+        <item>You are not an admin</item>
+    </string-array>
+
+    <string-array name="usuarioList">
+        <item>Admin</item>
+        <item>User</item>
+    </string-array>
+
 </resources>

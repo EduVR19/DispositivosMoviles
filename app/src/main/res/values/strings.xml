@@ -29,7 +29,10 @@
 
     <!-- Esto es la pantalla settings-->
     <string name="changeButton">Cambiar</string>
-
+    <string-array name="mensajesList">
+        <item>No eres usuario</item>
+        <item>No eres administrador</item>
+    </string-array>
     <string-array name="usuarioList">
         <item>Administrador</item>
         <item>Usuario</item>

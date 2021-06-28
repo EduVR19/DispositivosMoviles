@@ -1,11 +1,9 @@
-    package com.example.dispositivosmoviles
+        package com.example.dispositivosmoviles
 
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.appcompat.app.AlertDialog
@@ -21,7 +19,7 @@ class AuthActivity : AppCompatActivity() {
         setContentView(R.layout.activity_auth)
         // Setup
         setup()
-        languages();
+        languages()
 
     }
 
@@ -33,15 +31,39 @@ class AuthActivity : AppCompatActivity() {
         val usuarioslist = resources.getStringArray(R.array.usuarioList)
         // val usuarioslist = listOf("Administrador", "Usuario")
         val adaptadorlist = ArrayAdapter(this, android.R.layout.simple_spinner_item, usuarioslist)
+
         kindusers.adapter = adaptadorlist
 
         loginButton.setOnClickListener {
-                if (kindusers.getItemAtPosition(kindusers.selectedItemPosition).toString() == "Usuario") {
-                    val email = emailEditText.text.toString();
+                if (kindusers.getItemAtPosition(kindusers.selectedItemPosition).toString() == "Usuario" || kindusers.getItemAtPosition(kindusers.selectedItemPosition).toString() == "User" ) {
+                    val email = emailEditText.text.toString()
 
-                    db.collection("Usuario").document(email).get()
+                    db.collection("Usuarios").document(email).get()
                         .addOnSuccessListener {
-                            val contrasenaDocumento = it.get("Contraseña");
+                            val isAdmin = it.get("isAdmin");
+                            if(isAdmin == false){
+                                FirebaseAuth.getInstance().
+                                            signInWithEmailAndPassword(emailEditText.text.toString(),
+                                                                       passwordEditText.text.toString())
+                                            .addOnCompleteListener{
+                                                if (it.isSuccessful && Firebase.auth.currentUser?.isEmailVerified == true) {
+                                                    showHome(it.result?.user?.email ?: "")
+                                                    //sendSignInLink(it.result?.user?.email ?: "", actionCodeSettings {  })
+                                                    emailEditText.text.clear()
+                                                    passwordEditText.text.clear()
+                                                } else {
+                                                    showAlert()
+                                                }
+                                            }
+                            }else
+                            {
+                                showAlert2("No eres usuario")
+                            }
+                        }
+
+                    /*db.collection("Usuario").document(email).get()
+                        .addOnSuccessListener {
+                            val contrasenaDocumento = it.get("Contraseña")
                             if(contrasenaDocumento != null){
                                 if (passwordEditText.text.toString() == contrasenaDocumento) {
                                     FirebaseAuth.getInstance().signInWithEmailAndPassword(
@@ -67,14 +89,40 @@ class AuthActivity : AppCompatActivity() {
                         }
                         .addOnFailureListener{
                             showAlert()
-                        }
+                        }*/
                 } else
                 {
-                    val email = emailEditText.text.toString();
+                    val email = emailEditText.text.toString()
+
+                    db.collection("Usuarios").document(email).get()
+                        .addOnSuccessListener {
+                            val isAdmin = it.get("isAdmin");
+                            if(isAdmin == true){
+                                FirebaseAuth.getInstance().
+                                signInWithEmailAndPassword(emailEditText.text.toString(),
+                                    passwordEditText.text.toString())
+                                    .addOnCompleteListener{
+                                        if (it.isSuccessful && Firebase.auth.currentUser?.isEmailVerified == true) {
+                                            showHome(it.result?.user?.email ?: "")
+                                            //sendSignInLink(it.result?.user?.email ?: "", actionCodeSettings {  })
+                                            emailEditText.text.clear()
+                                            passwordEditText.text.clear()
+                                        } else {
+                                            showAlert()
+                                        }
+                                    }
+                            }
+                            else
+                            {
+                                showAlert2("No eres administrador")
+                            }
+                        }
+                    /*
+                    val email = emailEditText.text.toString()
 
                     db.collection("Administrador").document(email).get()
                         .addOnSuccessListener {
-                            val contrasenaDocumento = it.get("Contraseña");
+                            val contrasenaDocumento = it.get("Contraseña")
                             if(contrasenaDocumento != null){
                                 if (passwordEditText.text.toString() == contrasenaDocumento) {
                                     FirebaseAuth.getInstance().signInWithEmailAndPassword(
@@ -101,62 +149,11 @@ class AuthActivity : AppCompatActivity() {
                         .addOnFailureListener{
                             showAlert()
                         }
+                    */
                 }
-                    /*val crr = db.collection("Usuario")
-                        .whereEqualTo("Correo", emailEditText.text.toString())
-                        .get().addOnSuccessListener {
-                            if (emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()) {
-                                FirebaseAuth.getInstance().signInWithEmailAndPassword(
-                                    emailEditText.text.toString(),
-                                    passwordEditText.text.toString()
-                                ).addOnCompleteListener {
-                                    if (it.isSuccessful && Firebase.auth.currentUser?.isEmailVerified == true) {
-                                        showHome(it.result?.user?.email ?: "")
-                                        //sendSignInLink(it.result?.user?.email ?: "", actionCodeSettings {  })
-                                        emailEditText.text.clear()
-                                        passwordEditText.text.clear()
-                                    } else {
-                                        showAlert()
-                                    }
-                                }
-                            }
-                        }
 
-                     */
-                    /*if (crr != null) {
 
-                    }
-                    else {
-                        showAlert()
-                    }*/
 
-                /*else {
-                    val crr = db.collection("Administrador")
-                        .whereEqualTo("Correo", emailEditText.text.toString())
-                        .get().addOnSuccessListener {
-                            if (emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()) {
-                                FirebaseAuth.getInstance().signInWithEmailAndPassword(
-                                    emailEditText.text.toString(),
-                                    passwordEditText.text.toString()
-                                ).addOnCompleteListener {
-                                    if (it.isSuccessful && Firebase.auth.currentUser?.isEmailVerified == true) {
-                                        showHome(it.result?.user?.email ?: "")
-                                        //sendSignInLink(it.result?.user?.email ?: "", actionCodeSettings {  })
-                                        emailEditText.text.clear()
-                                        passwordEditText.text.clear()
-                                    } else {
-                                        showAlert()
-                                    }
-                                }
-                            }
-                        }
-                    /*if (crr != null) {
-
-                    }
-                    else {
-                        showAlert()
-                    }*/
-                }*/
         }
 
         registrarText.setOnClickListener {
@@ -175,6 +172,14 @@ class AuthActivity : AppCompatActivity() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Error")
         builder.setMessage("Se ha producido un error")
+        builder.setPositiveButton("Aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+    private fun showAlert2( mensaje: String) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage(mensaje)
         builder.setPositiveButton("Aceptar", null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
@@ -220,7 +225,7 @@ class AuthActivity : AppCompatActivity() {
     lateinit var MyPreference: MyPreference
     override fun attachBaseContext(newBase: Context?) {
         MyPreference = MyPreference(newBase!!)
-        val lang = MyPreference.getLoginCount();
+        val lang = MyPreference.getLoginCount()
 
         super.attachBaseContext(MyContextWrapper.wrap(newBase, lang))
 

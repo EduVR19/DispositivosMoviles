@@ -43,11 +43,11 @@ class SignUpActivity : AppCompatActivity() {
                             //showHome(it.result?.user?.email ?: "")
                             sendEmailVerification()
                             showAlertEmail()
-                            db.collection("Usuario").document(emailEditText.text.toString()).set(
+                            db.collection("Usuarios").document(emailEditText.text.toString()).set(
                                 hashMapOf("Correo" to emailEditText.text.toString(),
                                     "Contraseña" to passwordEditText.text.toString(),
                                     "Nombre" to nametextview.text.toString(),
-                                    "Telefono" to telefonotextview.text.toString())
+                                    "isAdmin" to false)
                             )
                         } else {
                             showAlert()

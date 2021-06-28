@@ -30,8 +30,6 @@ class RestablecerActivity : AppCompatActivity() {
 
         txtEmail = findViewById(R.id.emailRestablecerEdtiText)
         auth = FirebaseAuth.getInstance()
-
-
     }
 
     fun send(View:View){
@@ -82,7 +80,6 @@ class RestablecerActivity : AppCompatActivity() {
         // [START send_password_reset]
         val db = FirebaseFirestore.getInstance()
         val emailAddress = "user@example.com"
-        val crr = db.collection("Usuario").whereEqualTo("Correo", emailEditText.text.toString())
 
         Firebase.auth.sendPasswordResetEmail(emailAddress)
             .addOnCompleteListener { task ->
