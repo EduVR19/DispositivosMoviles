@@ -36,52 +36,127 @@ class AuthActivity : AppCompatActivity() {
         kindusers.adapter = adaptadorlist
 
         loginButton.setOnClickListener {
-                if (kindusers.getItemAtPosition(kindusers.selectedItemPosition).toString().equals("Usuario")){
-                    val crr = db.collection("Usuario").whereEqualTo("Correo", emailEditText.text.toString())
-                    if (crr != null) {
-                        if (emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()) {
-                            FirebaseAuth.getInstance().signInWithEmailAndPassword(
-                                emailEditText.text.toString(),
-                                passwordEditText.text.toString()
-                            ).addOnCompleteListener {
-                                if (it.isSuccessful && Firebase.auth.currentUser?.isEmailVerified == true) {
-                                    showHome(it.result?.user?.email ?: "")
-                                    //sendSignInLink(it.result?.user?.email ?: "", actionCodeSettings {  })
-                                    emailEditText.text.clear()
-                                    passwordEditText.text.clear()
-                                } else {
-                                    showAlert()
+                if (kindusers.getItemAtPosition(kindusers.selectedItemPosition).toString() == "Usuario") {
+                    val email = emailEditText.text.toString();
+
+                    db.collection("Usuario").document(email).get()
+                        .addOnSuccessListener {
+                            val contrasenaDocumento = it.get("Contraseña");
+                            if(contrasenaDocumento != null){
+                                if (passwordEditText.text.toString() == contrasenaDocumento) {
+                                    FirebaseAuth.getInstance().signInWithEmailAndPassword(
+                                        emailEditText.text.toString(),
+                                        passwordEditText.text.toString()
+
+                                    ).addOnCompleteListener {
+                                        if (it.isSuccessful && Firebase.auth.currentUser?.isEmailVerified == true) {
+                                            showHome(it.result?.user?.email ?: "")
+                                            //sendSignInLink(it.result?.user?.email ?: "", actionCodeSettings {  })
+                                            emailEditText.text.clear()
+                                            passwordEditText.text.clear()
+                                        } else {
+                                            showAlert()
+                                        }
+                                    }
+                                }
+                            } else{
+                                showAlert()
+                            }
+
+
+                        }
+                        .addOnFailureListener{
+                            showAlert()
+                        }
+                } else
+                {
+                    val email = emailEditText.text.toString();
+
+                    db.collection("Administrador").document(email).get()
+                        .addOnSuccessListener {
+                            val contrasenaDocumento = it.get("Contraseña");
+                            if(contrasenaDocumento != null){
+                                if (passwordEditText.text.toString() == contrasenaDocumento) {
+                                    FirebaseAuth.getInstance().signInWithEmailAndPassword(
+                                        emailEditText.text.toString(),
+                                        passwordEditText.text.toString()
+
+                                    ).addOnCompleteListener {
+                                        if (it.isSuccessful && Firebase.auth.currentUser?.isEmailVerified == true) {
+                                            showHome(it.result?.user?.email ?: "")
+                                            //sendSignInLink(it.result?.user?.email ?: "", actionCodeSettings {  })
+                                            emailEditText.text.clear()
+                                            passwordEditText.text.clear()
+                                        } else {
+                                            showAlert()
+                                        }
+                                    }
+                                }
+                            } else{
+                                showAlert()
+                            }
+
+
+                        }
+                        .addOnFailureListener{
+                            showAlert()
+                        }
+                }
+                    /*val crr = db.collection("Usuario")
+                        .whereEqualTo("Correo", emailEditText.text.toString())
+                        .get().addOnSuccessListener {
+                            if (emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()) {
+                                FirebaseAuth.getInstance().signInWithEmailAndPassword(
+                                    emailEditText.text.toString(),
+                                    passwordEditText.text.toString()
+                                ).addOnCompleteListener {
+                                    if (it.isSuccessful && Firebase.auth.currentUser?.isEmailVerified == true) {
+                                        showHome(it.result?.user?.email ?: "")
+                                        //sendSignInLink(it.result?.user?.email ?: "", actionCodeSettings {  })
+                                        emailEditText.text.clear()
+                                        passwordEditText.text.clear()
+                                    } else {
+                                        showAlert()
+                                    }
                                 }
                             }
                         }
+
+                     */
+                    /*if (crr != null) {
+
                     }
                     else {
                         showAlert()
-                    }
-                }
-                else {
-                    val crr = db.collection("Administrador").whereEqualTo("Correo", emailEditText.text.toString())
-                    if (crr != null) {
-                        if (emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()) {
-                            FirebaseAuth.getInstance().signInWithEmailAndPassword(
-                                emailEditText.text.toString(),
-                                passwordEditText.text.toString()
-                            ).addOnCompleteListener {
-                                if (it.isSuccessful && Firebase.auth.currentUser?.isEmailVerified == true) {
-                                    showHome(it.result?.user?.email ?: "")
-                                    //sendSignInLink(it.result?.user?.email ?: "", actionCodeSettings {  })
-                                    emailEditText.text.clear()
-                                    passwordEditText.text.clear()
-                                } else {
-                                    showAlert()
+                    }*/
+
+                /*else {
+                    val crr = db.collection("Administrador")
+                        .whereEqualTo("Correo", emailEditText.text.toString())
+                        .get().addOnSuccessListener {
+                            if (emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()) {
+                                FirebaseAuth.getInstance().signInWithEmailAndPassword(
+                                    emailEditText.text.toString(),
+                                    passwordEditText.text.toString()
+                                ).addOnCompleteListener {
+                                    if (it.isSuccessful && Firebase.auth.currentUser?.isEmailVerified == true) {
+                                        showHome(it.result?.user?.email ?: "")
+                                        //sendSignInLink(it.result?.user?.email ?: "", actionCodeSettings {  })
+                                        emailEditText.text.clear()
+                                        passwordEditText.text.clear()
+                                    } else {
+                                        showAlert()
+                                    }
                                 }
                             }
                         }
+                    /*if (crr != null) {
+
                     }
                     else {
                         showAlert()
-                    }
-                }
+                    }*/
+                }*/
         }
 
         registrarText.setOnClickListener {
@@ -177,5 +252,6 @@ class AuthActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 TODO("Not yet implemented")
             }
-        } */
+        }*/
+
 }
