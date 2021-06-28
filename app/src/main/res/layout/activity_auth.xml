@@ -35,6 +35,11 @@
             android:layout_height="40dp"
             android:scrollbarSize="10dp" />
 
+        <Spinner
+            android:id="@+id/Usuariokinds"
+            android:layout_width="match_parent"
+            android:layout_height="43dp" />
+
         <EditText
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"

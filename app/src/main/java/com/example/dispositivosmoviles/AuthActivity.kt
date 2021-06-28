@@ -4,9 +4,14 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_auth.*
 
@@ -14,32 +19,69 @@ class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)
-
         // Setup
         setup()
         languages();
+
     }
 
     private fun setup() {
         title = "Login"
 
+        val db = FirebaseFirestore.getInstance()
+        val kindusers = findViewById<Spinner>(R.id.Usuariokinds)
+        val usuarioslist = resources.getStringArray(R.array.usuarioList)
+        // val usuarioslist = listOf("Administrador", "Usuario")
+        val adaptadorlist = ArrayAdapter(this, android.R.layout.simple_spinner_item, usuarioslist)
+        kindusers.adapter = adaptadorlist
+
         loginButton.setOnClickListener {
-            if (emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty() )
-            {
-                FirebaseAuth.getInstance().signInWithEmailAndPassword(emailEditText.text.toString(), passwordEditText.text.toString()).addOnCompleteListener {
-                    if (it.isSuccessful && Firebase.auth.currentUser?.isEmailVerified == true)
-                    {
-                        showHome(it.result?.user?.email ?: "")
-                        //sendSignInLink(it.result?.user?.email ?: "", actionCodeSettings {  })
-                        emailEditText.text.clear()
-                        passwordEditText.text.clear()
+                if (kindusers.getItemAtPosition(kindusers.selectedItemPosition).toString().equals("Usuario")){
+                    val crr = db.collection("Usuario").whereEqualTo("Correo", emailEditText.text.toString())
+                    if (crr != null) {
+                        if (emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()) {
+                            FirebaseAuth.getInstance().signInWithEmailAndPassword(
+                                emailEditText.text.toString(),
+                                passwordEditText.text.toString()
+                            ).addOnCompleteListener {
+                                if (it.isSuccessful && Firebase.auth.currentUser?.isEmailVerified == true) {
+                                    showHome(it.result?.user?.email ?: "")
+                                    //sendSignInLink(it.result?.user?.email ?: "", actionCodeSettings {  })
+                                    emailEditText.text.clear()
+                                    passwordEditText.text.clear()
+                                } else {
+                                    showAlert()
+                                }
+                            }
+                        }
                     }
-                    else
-                    {
+                    else {
                         showAlert()
                     }
                 }
-            }
+                else {
+                    val crr = db.collection("Administrador").whereEqualTo("Correo", emailEditText.text.toString())
+                    if (crr != null) {
+                        if (emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()) {
+                            FirebaseAuth.getInstance().signInWithEmailAndPassword(
+                                emailEditText.text.toString(),
+                                passwordEditText.text.toString()
+                            ).addOnCompleteListener {
+                                if (it.isSuccessful && Firebase.auth.currentUser?.isEmailVerified == true) {
+                                    showHome(it.result?.user?.email ?: "")
+                                    //sendSignInLink(it.result?.user?.email ?: "", actionCodeSettings {  })
+                                    emailEditText.text.clear()
+                                    passwordEditText.text.clear()
+                                } else {
+                                    showAlert()
+                                }
+                            }
+                        }
+                    }
+                    else {
+                        showAlert()
+                    }
+                }
         }
 
         registrarText.setOnClickListener {
@@ -54,8 +96,7 @@ class AuthActivity : AppCompatActivity() {
 
     }
 
-    private fun showAlert()
-    {
+    private fun showAlert() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Error")
         builder.setMessage("Credenciales incorrectas")
@@ -65,8 +106,8 @@ class AuthActivity : AppCompatActivity() {
     }
 
 
-    private fun showHome(email: String)
-    {
+    private fun showHome(email: String) {
+
         val homeIntent = Intent(this, HomeActivity::class.java).apply {
             putExtra("email", email)
             // putExtra("provider", provider.name)
@@ -74,7 +115,7 @@ class AuthActivity : AppCompatActivity() {
         startActivity(homeIntent)
     }
 
- /*   private fun buildActionCodeSettings() {
+    /*   private fun buildActionCodeSettings() {
         // [START auth_build_action_code_settings]
         val actionCodeSettings = actionCodeSettings {
             // URL you want to redirect back to. The domain (www.example.com) for this
@@ -106,13 +147,35 @@ class AuthActivity : AppCompatActivity() {
         MyPreference = MyPreference(newBase!!)
         val lang = MyPreference.getLoginCount();
 
-        super.attachBaseContext(MyContextWrapper.wrap(newBase,lang))
+        super.attachBaseContext(MyContextWrapper.wrap(newBase, lang))
 
     }
-    private fun languages(){
-        textViewLanguage.setOnClickListener{
-            startActivity(Intent(this,SettingsActivity::class.java))
+
+    private fun languages() {
+        textViewLanguage.setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
         }
     }
 
+   /* private fun tipodeuser() {
+        val kindusers = findViewById<Spinner>(R.id.Usuariokinds)
+        val usuarioslist = resources.getStringArray(R.array.usuarioList)
+        // val usuarioslist = listOf("Administrador", "Usuario")
+        val adaptadorlist = ArrayAdapter(this, android.R.layout.simple_spinner_item, usuarioslist)
+        kindusers.adapter = adaptadorlist
+
+        kindusers.onItemSelectedListener = object:
+            AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                val posicion = usuarioslist[position].toInt()
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+        } */
 }

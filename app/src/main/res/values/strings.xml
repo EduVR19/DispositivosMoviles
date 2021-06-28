@@ -10,7 +10,6 @@
     <string name="forgotPassword">¿Has olvidado tu contraseña?</string>
     <string name="changeLanguage">Cambiar idioma</string>
 
-
     <!-- Esto es la pantalla home-->
     <string name="home">Home</string>
     <string name="emailText">Correo</string>
@@ -28,5 +27,8 @@
     <!-- Esto es la pantalla settings-->
     <string name="changeButton">Cambiar</string>
 
-
+    <string-array name="usuarioList">
+        <item>Administrador</item>
+        <item>Usuario</item>
+    </string-array>
 </resources>

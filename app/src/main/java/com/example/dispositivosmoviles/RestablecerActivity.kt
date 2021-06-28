@@ -12,8 +12,13 @@ import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_auth.*
+import kotlinx.android.synthetic.main.activity_auth.emailEditText
+import kotlinx.android.synthetic.main.activity_auth.passwordEditText
 import kotlinx.android.synthetic.main.activity_restablecer.*
+import kotlinx.android.synthetic.main.activity_sign_up.*
 
 class RestablecerActivity : AppCompatActivity() {
     private lateinit var auth:FirebaseAuth
@@ -75,7 +80,9 @@ class RestablecerActivity : AppCompatActivity() {
 
     private fun sendPasswordReset() {
         // [START send_password_reset]
+        val db = FirebaseFirestore.getInstance()
         val emailAddress = "user@example.com"
+        val crr = db.collection("Usuario").whereEqualTo("Correo", emailEditText.text.toString())
 
         Firebase.auth.sendPasswordResetEmail(emailAddress)
             .addOnCompleteListener { task ->
@@ -84,7 +91,5 @@ class RestablecerActivity : AppCompatActivity() {
 
                 }
             }
-        // [END send_password_reset]
     }
-
 }
