@@ -6,7 +6,7 @@
     <string name="passHint">Password</string>
     <string name="logInButton">Log in</string>
     <string name="register">Register</string>
-    <string name="forgotPassword">Forgot email?</string>
+    <string name="forgotPassword">Forgot password?</string>
     <string name="changeLanguage">Change language</string>
 
     <!-- Esto es la pantalla home-->
