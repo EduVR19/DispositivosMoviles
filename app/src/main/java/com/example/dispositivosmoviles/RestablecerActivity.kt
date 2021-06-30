@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
+import android.view.KeyEvent
 import android.view.View
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
@@ -88,5 +89,12 @@ class RestablecerActivity : AppCompatActivity() {
 
                 }
             }
+    }
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK){
+            finishAffinity();
+            System.exit(0);
+        }
+        return super.onKeyDown(keyCode, event)
     }
 }

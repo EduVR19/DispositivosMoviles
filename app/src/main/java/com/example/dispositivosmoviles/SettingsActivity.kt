@@ -3,6 +3,7 @@ package com.example.dispositivosmoviles
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_settings.*
 
@@ -27,7 +28,12 @@ class SettingsActivity : AppCompatActivity() {
             finish();
         }
     }
-
-
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK){
+            finishAffinity();
+            System.exit(0);
+        }
+        return super.onKeyDown(keyCode, event)
+    }
 
 }

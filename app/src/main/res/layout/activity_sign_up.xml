@@ -100,13 +100,19 @@
             android:id="@+id/mascotatextview"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:hint="Mascota" />
+            android:hint="Nombre de la Mascota" />
 
         <EditText
             android:id="@+id/razatextview"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:hint="Raza" />
+
+        <EditText
+            android:id="@+id/edadmtextview"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint=" Edad de la Mascota" />
 
         <Space
             android:layout_width="match_parent"

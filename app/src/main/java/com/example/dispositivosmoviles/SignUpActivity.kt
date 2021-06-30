@@ -6,6 +6,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -47,6 +48,7 @@ class SignUpActivity : AppCompatActivity() {
                             //mascota
                             val nombrePerro = mascotatextview.text.toString()
                             val razaPerro = razatextview.text.toString()
+                            val edadperro = edadmtextview.text.toString()
                             var mascotaNueva = Mascota(nombrePerro,razaPerro)
 
                             var usuarioNuevo = UsuarioClass(email,nombre,telefono,false,mascotaNueva)
@@ -114,5 +116,12 @@ class SignUpActivity : AppCompatActivity() {
                 }
             }
         // [END send_email_verification]
+    }
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK){
+            finishAffinity();
+            System.exit(0);
+        }
+        return super.onKeyDown(keyCode, event)
     }
 }
