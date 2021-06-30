@@ -1,4 +1,4 @@
-        package com.example.dispositivosmoviles
+package com.example.dispositivosmoviles
 
 import android.content.Context
 import android.content.Intent
@@ -10,6 +10,7 @@ import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_auth.*
 
@@ -36,120 +37,70 @@ class AuthActivity : AppCompatActivity() {
 
         loginButton.setOnClickListener {
                 if (kindusers.getItemAtPosition(kindusers.selectedItemPosition).toString() == "Usuario" || kindusers.getItemAtPosition(kindusers.selectedItemPosition).toString() == "User" ) {
+
                     val email = emailEditText.text.toString()
-
-                    db.collection("Usuarios").document(email).get()
-                        .addOnSuccessListener {
-                            val isAdmin = it.get("isAdmin");
-                            if(isAdmin == false){
-                                FirebaseAuth.getInstance().
-                                            signInWithEmailAndPassword(emailEditText.text.toString(),
-                                                                       passwordEditText.text.toString())
-                                            .addOnCompleteListener{
-                                                if (it.isSuccessful && Firebase.auth.currentUser?.isEmailVerified == true) {
-                                                    showHome(it.result?.user?.email ?: "")
-                                                    //sendSignInLink(it.result?.user?.email ?: "", actionCodeSettings {  })
-                                                    emailEditText.text.clear()
-                                                    passwordEditText.text.clear()
-                                                } else {
-                                                    showAlert()
-                                                }
-                                            }
-                            }else
-                            {
-                                showAlert2("No eres usuario")
-                            }
-                        }
-
-                    /*db.collection("Usuario").document(email).get()
-                        .addOnSuccessListener {
-                            val contrasenaDocumento = it.get("Contraseña")
-                            if(contrasenaDocumento != null){
-                                if (passwordEditText.text.toString() == contrasenaDocumento) {
-                                    FirebaseAuth.getInstance().signInWithEmailAndPassword(
-                                        emailEditText.text.toString(),
-                                        passwordEditText.text.toString()
-
-                                    ).addOnCompleteListener {
-                                        if (it.isSuccessful && Firebase.auth.currentUser?.isEmailVerified == true) {
-                                            showHome(it.result?.user?.email ?: "")
-                                            //sendSignInLink(it.result?.user?.email ?: "", actionCodeSettings {  })
-                                            emailEditText.text.clear()
-                                            passwordEditText.text.clear()
-                                        } else {
-                                            showAlert()
-                                        }
+                    val docref = db.collection("Usuarios").document(email)
+                    docref.get().addOnSuccessListener {
+                        val user = it.toObject<UsuarioClass>()
+                        if(user?.admin == false){
+                            FirebaseAuth.getInstance().
+                            signInWithEmailAndPassword(emailEditText.text.toString(),passwordEditText.text.toString())
+                                .addOnCompleteListener{
+                                    if (it.isSuccessful && Firebase.auth.currentUser?.isEmailVerified == true) {
+                                        showClientHome(it.result?.user?.email ?: "")
+                                        //sendSignInLink(it.result?.user?.email ?: "", actionCodeSettings {  })
+                                        emailEditText.text.clear()
+                                        passwordEditText.text.clear()
+                                    } else {
+                                        showAlert()
                                     }
                                 }
-                            } else{
-                                showAlert()
-                            }
-
-
+                                .addOnFailureListener{
+                                    showAlert2("Falló el sign up")
+                                }
                         }
+                        else
+                        {
+                            showAlert2("No eres administrador")
+                        }
+                    }
                         .addOnFailureListener{
-                            showAlert()
-                        }*/
+                            showAlert2("Falló la colección de datos")
+                        }
                 } else
                 {
                     val email = emailEditText.text.toString()
-
-                    db.collection("Usuarios").document(email).get()
-                        .addOnSuccessListener {
-                            val isAdmin = it.get("isAdmin");
-                            if(isAdmin == true){
-                                FirebaseAuth.getInstance().
-                                signInWithEmailAndPassword(emailEditText.text.toString(),
-                                    passwordEditText.text.toString())
-                                    .addOnCompleteListener{
-                                        if (it.isSuccessful && Firebase.auth.currentUser?.isEmailVerified == true) {
-                                            showHome(it.result?.user?.email ?: "")
-                                            //sendSignInLink(it.result?.user?.email ?: "", actionCodeSettings {  })
-                                            emailEditText.text.clear()
-                                            passwordEditText.text.clear()
-                                        } else {
-                                            showAlert()
-                                        }
-                                    }
-                            }
-                            else
-                            {
-                                showAlert2("No eres administrador")
-                            }
+                    val docref = db.collection("Usuarios").document(email)
+                    docref.get().addOnSuccessListener {
+                        val user = it.toObject<UsuarioClass>()
+                        if(user==null){
+                            showAlert2("el user dio null")
                         }
-                    /*
-                    val email = emailEditText.text.toString()
-
-                    db.collection("Administrador").document(email).get()
-                        .addOnSuccessListener {
-                            val contrasenaDocumento = it.get("Contraseña")
-                            if(contrasenaDocumento != null){
-                                if (passwordEditText.text.toString() == contrasenaDocumento) {
-                                    FirebaseAuth.getInstance().signInWithEmailAndPassword(
-                                        emailEditText.text.toString(),
-                                        passwordEditText.text.toString()
-
-                                    ).addOnCompleteListener {
-                                        if (it.isSuccessful && Firebase.auth.currentUser?.isEmailVerified == true) {
-                                            showHome(it.result?.user?.email ?: "")
-                                            //sendSignInLink(it.result?.user?.email ?: "", actionCodeSettings {  })
-                                            emailEditText.text.clear()
-                                            passwordEditText.text.clear()
-                                        } else {
-                                            showAlert()
-                                        }
+                        if(user?.admin == true){
+                            FirebaseAuth.getInstance().
+                            signInWithEmailAndPassword(emailEditText.text.toString(),passwordEditText.text.toString())
+                                .addOnCompleteListener{
+                                    if (it.isSuccessful && Firebase.auth.currentUser?.isEmailVerified == true) {
+                                        showAdminHome(it.result?.user?.email ?: "")
+                                        //sendSignInLink(it.result?.user?.email ?: "", actionCodeSettings {  })
+                                        emailEditText.text.clear()
+                                        passwordEditText.text.clear()
+                                    } else {
+                                        showAlert()
                                     }
                                 }
-                            } else{
-                                showAlert()
-                            }
-
-
+                                .addOnFailureListener{
+                                    showAlert2("Falló el sign up")
+                                }
                         }
+                        else
+                        {
+                            showAlert2("No eres administrador")
+                        }
+                    }
                         .addOnFailureListener{
-                            showAlert()
+                            showAlert2("Falló la colección de datos")
                         }
-                    */
                 }
 
 
@@ -166,10 +117,6 @@ class AuthActivity : AppCompatActivity() {
             startActivity(contrasenaOlvidadaIntent)
         }
 
-        pruebasButton.setOnClickListener {
-            val pruebasButtonIntent = Intent(this, PruebasActivity::class.java)
-            startActivity(pruebasButtonIntent)
-        }
 
     }
 
@@ -199,34 +146,22 @@ class AuthActivity : AppCompatActivity() {
         }
         startActivity(homeIntent)
     }
+    private fun showAdminHome(email: String) {
 
-    /*   private fun buildActionCodeSettings() {
-        // [START auth_build_action_code_settings]
-        val actionCodeSettings = actionCodeSettings {
-            // URL you want to redirect back to. The domain (www.example.com) for this
-            // URL must be whitelisted in the Firebase Console.
-            url = "https://www.example.com/finishSignUp?cartId=1234"
-            // This must be true
-            handleCodeInApp = true
-            setIOSBundleId("com.example.ios")
-            setAndroidPackageName(
-                "com.example.android",
-                true, /* installIfNotAvailable */
-                "12" /* minimumVersion */)
+        val adminHomeIntent = Intent(this, MainAdminActivity::class.java).apply {
+            putExtra("email", email)
+            // putExtra("provider", provider.name)
         }
-        // [END auth_build_action_code_settings]
+        startActivity(adminHomeIntent)
+    }
+    private fun showClientHome(email: String) {
+        val clientHomeIntent = Intent(this, MainClientActivity::class.java).apply {
+            putExtra("email", email)
+            // putExtra("provider", provider.name)
+        }
+        startActivity(clientHomeIntent)
     }
 
-    private fun sendSignInLink(email: String, actionCodeSettings: ActionCodeSettings) {
-        // [START auth_send_sign_in_link]
-        Firebase.auth.sendSignInLinkToEmail(email, actionCodeSettings)
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    Log.d(TAG, "Email sent.")
-                }
-            }
-        // [END auth_send_sign_in_link]
-    } */
     lateinit var MyPreference: MyPreference
     override fun attachBaseContext(newBase: Context?) {
         MyPreference = MyPreference(newBase!!)
@@ -241,27 +176,5 @@ class AuthActivity : AppCompatActivity() {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
     }
-
-   /* private fun tipodeuser() {
-        val kindusers = findViewById<Spinner>(R.id.Usuariokinds)
-        val usuarioslist = resources.getStringArray(R.array.usuarioList)
-        // val usuarioslist = listOf("Administrador", "Usuario")
-        val adaptadorlist = ArrayAdapter(this, android.R.layout.simple_spinner_item, usuarioslist)
-        kindusers.adapter = adaptadorlist
-
-        kindusers.onItemSelectedListener = object:
-            AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                val posicion = usuarioslist[position].toInt()
-            }
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
-            }
-        }*/
 
 }

@@ -32,31 +32,38 @@ class SignUpActivity : AppCompatActivity() {
         val db = FirebaseFirestore.getInstance()
 
         signUpButton.setOnClickListener {
-            if (passwordEditText.text.toString().equals(editTextPassword.text.toString())){
+            if (passwordEditText.text.toString() == editTextPassword.text.toString()){
 
                 if (emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()) {
-                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(
-                        emailEditText.text.toString(),
-                        passwordEditText.text.toString()
-                ).addOnCompleteListener {
+                    val email = emailEditText.text.toString()
+                    val contrasena = passwordEditText.text.toString()
+                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,contrasena)
+                        .addOnCompleteListener {
                         if (it.isSuccessful) {
+                            //usuario
+                            val telefono = telefonotextview.text.toString()
+                            val nombre = nametextview.text.toString()
+
+                            //mascota
+                            val nombrePerro = mascotatextview.text.toString()
+                            val razaPerro = razatextview.text.toString()
+                            var mascotaNueva = Mascota(nombrePerro,razaPerro)
+
+                            var usuarioNuevo = UsuarioClass(email,nombre,telefono,false,mascotaNueva)
+
                             //showHome(it.result?.user?.email ?: "")
                             sendEmailVerification()
                             showAlertEmail()
-                            db.collection("Usuarios").document(emailEditText.text.toString()).set(
-                                hashMapOf("Correo" to emailEditText.text.toString(),
-                                    "Telefono" to telefonotextview.text.toString(),
-                                    "Nombre" to nametextview.text.toString(),
-                                    "isAdmin" to false)
-                            )
+                            db.collection("Usuarios").document(email).set(usuarioNuevo)
+
                         } else {
-                            showAlert()
+                            showAlert2("No se agregó a la bd")
                         }
                     }
                 }
             }
             else {
-                showAlert()
+                showAlert2("Las contraseñas no coinciden")
             }
         }
     }
@@ -67,6 +74,14 @@ class SignUpActivity : AppCompatActivity() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Error")
         builder.setMessage("La contraseña no coincide")
+        builder.setPositiveButton("Aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+    private fun showAlert2( mensaje: String) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage(mensaje)
         builder.setPositiveButton("Aceptar", null)
         val dialog: AlertDialog = builder.create()
         dialog.show()

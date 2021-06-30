@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainAdmin">
+    tools:context=".MainClientActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -40,7 +40,7 @@
             android:textSize="17sp" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/petNameclient"
             android:layout_width="match_parent"
             android:layout_height="31dp"
             android:layout_marginLeft="10sp"
@@ -63,7 +63,7 @@
             android:textSize="17sp" />
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/petRaceClient"
             android:layout_width="match_parent"
             android:layout_height="31dp"
             android:layout_marginLeft="10sp"
@@ -148,7 +148,7 @@
             android:textSize="17sp" />
 
         <TextView
-            android:id="@+id/textView26"
+            android:id="@+id/nameClient"
             android:layout_width="match_parent"
             android:layout_height="31dp"
             android:layout_marginLeft="10sp"
@@ -171,7 +171,7 @@
             android:textSize="17sp" />
 
         <TextView
-            android:id="@+id/textView28"
+            android:id="@+id/emailClient"
             android:layout_width="match_parent"
             android:layout_height="31dp"
             android:layout_marginLeft="10sp"
@@ -194,7 +194,7 @@
             android:textSize="17sp" />
 
         <TextView
-            android:id="@+id/textView30"
+            android:id="@+id/phoneClient"
             android:layout_width="match_parent"
             android:layout_height="31dp"
             android:layout_marginLeft="10dp"

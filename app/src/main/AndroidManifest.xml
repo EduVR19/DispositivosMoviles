@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DispositivosMoviles">
-        <activity android:name=".ClientesAdminActivity"></activity>
+        <activity android:name=".MainClientActivity"></activity>
         <activity android:name=".ReservacionAdminActivity" />
         <activity android:name=".ReserveAdminActivity" />
-        <activity android:name=".MainAdmin" />
+        <activity android:name=".MainAdminActivity" />
         <activity android:name=".RestablecerActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".HomeActivity" />
