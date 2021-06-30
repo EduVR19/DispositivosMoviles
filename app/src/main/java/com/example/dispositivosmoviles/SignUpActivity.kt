@@ -45,7 +45,7 @@ class SignUpActivity : AppCompatActivity() {
                             showAlertEmail()
                             db.collection("Usuarios").document(emailEditText.text.toString()).set(
                                 hashMapOf("Correo" to emailEditText.text.toString(),
-                                    "Contraseña" to passwordEditText.text.toString(),
+                                    "Telefono" to telefonotextview.text.toString(),
                                     "Nombre" to nametextview.text.toString(),
                                     "isAdmin" to false)
                             )

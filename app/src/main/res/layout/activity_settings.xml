@@ -6,6 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="411dp"
+        android:layout_height="51dp"
+        app:cardBackgroundColor="#3F51B5" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="48dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:backgroundTint="@color/purple_700"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_revert"
+        app:tint="#FFFFFF" />
+
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="409dp"

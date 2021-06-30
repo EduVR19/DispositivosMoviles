@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DispositivosMoviles">
-        <activity android:name=".ReserveAdminActivity"></activity>
+        <activity android:name=".ClientesAdminActivity"></activity>
+        <activity android:name=".ReservacionAdminActivity" />
+        <activity android:name=".ReserveAdminActivity" />
         <activity android:name=".MainAdmin" />
         <activity android:name=".RestablecerActivity" />
         <activity android:name=".SignUpActivity" />
