@@ -166,6 +166,11 @@ class AuthActivity : AppCompatActivity() {
             startActivity(contrasenaOlvidadaIntent)
         }
 
+        pruebasButton.setOnClickListener {
+            val pruebasButtonIntent = Intent(this, PruebasActivity::class.java)
+            startActivity(pruebasButtonIntent)
+        }
+
     }
 
     private fun showAlert() {

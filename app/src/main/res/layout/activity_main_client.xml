@@ -220,7 +220,12 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:background="@drawable/custom_button"
             android:text="Iniciar chat" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
 
         <Button
             android:id="@+id/button10"
@@ -228,7 +233,13 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="Ver reservación" />
+            android:text="Ver reservación"
+            android:background="@drawable/custom_button"
+            />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
 
         <Button
             android:id="@+id/button11"
@@ -236,7 +247,13 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="Cerrar sesión" />
+            android:text="Cerrar sesión"
+            android:background="@drawable/custom_button"
+            />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
