@@ -130,11 +130,5 @@
             android:layout_marginBottom="36dp"
             android:text="@string/changeLanguage" />
 
-        <Button
-            android:id="@+id/pruebasButton"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/custom_button"
-            android:text="Pruebas" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
