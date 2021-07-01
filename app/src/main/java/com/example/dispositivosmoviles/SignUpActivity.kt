@@ -16,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_auth.*
 import kotlinx.android.synthetic.main.activity_auth.emailEditText
 import kotlinx.android.synthetic.main.activity_auth.passwordEditText
 import kotlinx.android.synthetic.main.activity_settings.*
@@ -67,6 +68,9 @@ class SignUpActivity : AppCompatActivity() {
             else {
                 showAlert2("Las contraseñas no coinciden")
             }
+        }
+        imageButton4.setOnClickListener {
+            startActivity(Intent(this, AuthActivity::class.java))
         }
     }
 

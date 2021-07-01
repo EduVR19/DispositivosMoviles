@@ -31,6 +31,10 @@ class RestablecerActivity : AppCompatActivity() {
 
         txtEmail = findViewById(R.id.emailRestablecerEdtiText)
         auth = FirebaseAuth.getInstance()
+
+        imageButton5.setOnClickListener {
+            startActivity(Intent(this, AuthActivity::class.java))
+        }
     }
 
     fun send(View:View){

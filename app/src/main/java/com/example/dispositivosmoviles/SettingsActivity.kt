@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_settings.*
+import kotlinx.android.synthetic.main.activity_sign_up.*
 
 class SettingsActivity : AppCompatActivity() {
     lateinit var myPreference: MyPreference;
@@ -26,6 +27,9 @@ class SettingsActivity : AppCompatActivity() {
             myPreference.setLoginCount(languageList[spinner.selectedItemPosition])
             startActivity(Intent(this,AuthActivity::class.java))
             finish();
+        }
+        imageButton2.setOnClickListener {
+            startActivity(Intent(this, AuthActivity::class.java))
         }
     }
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {

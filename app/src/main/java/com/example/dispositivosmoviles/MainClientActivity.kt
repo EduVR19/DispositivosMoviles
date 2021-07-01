@@ -1,11 +1,13 @@
 package com.example.dispositivosmoviles
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.toObject
+import kotlinx.android.synthetic.main.activity_main_admin.*
 import kotlinx.android.synthetic.main.activity_main_client.*
 
 class MainClientActivity : AppCompatActivity() {

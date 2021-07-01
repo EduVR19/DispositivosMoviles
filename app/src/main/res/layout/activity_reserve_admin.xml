@@ -33,7 +33,6 @@
             style="@style/Widget.AppCompat.ImageButton"
             android:layout_width="48dp"
             android:layout_height="40dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="56dp"
             android:backgroundTint="@color/purple_700"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,8 +47,9 @@
         android:layout_width="399dp"
         android:layout_height="323dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="210dp">
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        tools:layout_editor_absoluteX="6dp">
 
         <TextView
             android:id="@+id/TextView16"
