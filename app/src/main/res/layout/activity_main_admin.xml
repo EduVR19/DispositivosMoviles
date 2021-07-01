@@ -7,7 +7,6 @@
     tools:context=".MainAdminActivity">
 
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
@@ -17,33 +16,47 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
         tools:context=".MainAdmin">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView5"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="84dp"
             android:text="Inicio Administrador"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="34sp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
             tools:ignore="MissingConstraints" />
 
         <LinearLayout
             android:id="@+id/linearLayout7"
-            android:layout_width="330dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="111dp"
+            android:layout_width="194dp"
+            android:layout_height="271dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5">
 
             <Button
                 android:id="@+id/button2"
@@ -51,20 +64,20 @@
                 android:layout_height="wrap_content"
                 android:height="70dp"
                 android:background="@drawable/custom_button"
-                app:cornerRadius="30dp"
-                android:text="Ver reservaciones" />
+                android:text="Ver reservaciones"
+                app:cornerRadius="30dp" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="30dp" />
 
             <Button
-                android:id="@+id/verclientes"
+                android:id="@+id/chatButtonAdmin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:height="70dp"
                 android:background="@drawable/custom_button"
-                android:text="Ver clientes"
+                android:text="Ver chats"
                 app:cornerRadius="30dp" />
 
             <Space
@@ -80,16 +93,6 @@
                 android:text="Cerrar sesión"
                 app:cornerRadius="30dp" />
         </LinearLayout>
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="409dp"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="1dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

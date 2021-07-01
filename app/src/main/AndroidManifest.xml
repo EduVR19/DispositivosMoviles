@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DispositivosMoviles">
-        <activity android:name=".MainClientActivity"></activity>
+        <activity android:name=".activities.ChatActivity"></activity>
+        <activity android:name=".activities.ListOfChatsAdminActivity" />
+        <activity android:name=".activities.ListOfChatsActivity" />
+        <activity android:name=".MainClientActivity" />
         <activity android:name=".ReservacionAdminActivity" />
         <activity android:name=".ReserveAdminActivity" />
         <activity android:name=".MainAdminActivity" />

@@ -1,9 +1,13 @@
 package com.example.dispositivosmoviles
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
+import com.example.dispositivosmoviles.activities.ListOfChatsActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_home.*
 
 /*enum class ProviderType
@@ -23,7 +27,6 @@ class HomeActivity : AppCompatActivity() {
         //val provider:String? = bundle?.getString("provider")
         setup(email ?: "")
     }
-
     private fun setup(email: String/*, provider: String)*/ )
     {
         title = "Inicio"
@@ -36,6 +39,7 @@ class HomeActivity : AppCompatActivity() {
             onBackPressed()
         }
     }
+
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK){
             finishAffinity();
