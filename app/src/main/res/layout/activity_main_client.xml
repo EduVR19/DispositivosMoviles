@@ -8,13 +8,14 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="401dp"
-        android:layout_height="195dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="366dp"
+        android:layout_height="222dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
 
         <TextView
@@ -72,6 +73,25 @@
             android:backgroundTint="#F4EBEB"
             android:text="TextView" />
 
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Edad"
+            android:textColor="#000000"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/petAgeClient"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="20sp"
+            android:background="#D3C2C2"
+            android:backgroundTint="#F4EBEB"
+            android:text="TextView" />
+
         <Space
             android:layout_width="match_parent"
             android:layout_height="12dp" />
@@ -82,20 +102,18 @@
         android:id="@+id/cardView"
         android:layout_width="411dp"
         android:layout_height="51dp"
-        app:cardBackgroundColor="#039E48"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:cardBackgroundColor="#039E48" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="402dp"
-        android:layout_height="234dp"
+        android:layout_width="365dp"
+        android:layout_height="229dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView">
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.228">
 
         <TextView
             android:id="@+id/TextView16"
@@ -168,7 +186,7 @@
         <TextView
             android:id="@+id/phoneClient"
             android:layout_width="match_parent"
-            android:layout_height="31dp"
+            android:layout_height="30dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="20dp"
             android:background="#D3C2C2"
@@ -205,9 +223,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="Ver reservación"
             android:background="@drawable/custom_button"
-            />
+            android:text="Ver reservación" />
 
         <Space
             android:layout_width="match_parent"
@@ -219,9 +236,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="Cerrar sesión"
             android:background="@drawable/custom_button"
-            />
+            android:text="Cerrar sesión" />
 
         <Space
             android:layout_width="match_parent"

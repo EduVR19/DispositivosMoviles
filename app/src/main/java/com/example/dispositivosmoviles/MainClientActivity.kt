@@ -30,6 +30,8 @@ class MainClientActivity : AppCompatActivity() {
         //Chat
         chatButton.setOnClickListener { startChat() }
 
+        // Reservación
+
     }
     private fun startChat(){
         val currentUser = auth.currentUser
@@ -56,6 +58,7 @@ class MainClientActivity : AppCompatActivity() {
                 phoneClient.text = user?.telefono.toString()
                 petNameclient.text = user?.mascota?.nombre
                 petRaceClient.text = user?.mascota?.sexo
+                petAgeClient.text = user?.mascota?.edad
             }
     }
     private fun setup( ) {

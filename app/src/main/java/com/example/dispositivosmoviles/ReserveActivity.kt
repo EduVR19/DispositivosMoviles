@@ -13,8 +13,7 @@ class ReserveActivity : AppCompatActivity() {
         setContentView(R.layout.activity_reserve)
 
         imageButton.setOnClickListener {
-            val signUpIntent = Intent(this, MainClientActivity::class.java)
-            startActivity(signUpIntent)
+            startActivity(Intent(this, MainClientActivity::class.java))
         }
 
     }

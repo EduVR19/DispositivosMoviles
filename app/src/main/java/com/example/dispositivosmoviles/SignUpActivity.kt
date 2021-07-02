@@ -50,7 +50,7 @@ class SignUpActivity : AppCompatActivity() {
                             val nombrePerro = mascotatextview.text.toString()
                             val razaPerro = razatextview.text.toString()
                             val edadperro = edadmtextview.text.toString()
-                            var mascotaNueva = Mascota(nombrePerro,razaPerro)
+                            var mascotaNueva = Mascota(nombrePerro,razaPerro,edadperro)
 
                             var usuarioNuevo = UsuarioClass(email,nombre,telefono,false,mascotaNueva)
 

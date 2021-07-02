@@ -51,7 +51,7 @@ class MainAdminActivity : AppCompatActivity() {
 
         logOutAdmin.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
-            onBackPressed()
+            startActivity(Intent(this, AuthActivity::class.java))
         }
 
         button2.setOnClickListener {

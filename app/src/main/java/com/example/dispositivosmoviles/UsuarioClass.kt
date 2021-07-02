@@ -11,5 +11,6 @@ data class UsuarioClass(
 
 public data class Mascota(
     var nombre : String? = "",
-    var sexo : String? =""
+    var sexo : String? ="",
+    var edad : String? =""
 )
