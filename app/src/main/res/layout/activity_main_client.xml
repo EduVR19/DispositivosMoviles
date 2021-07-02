@@ -129,7 +129,7 @@
             android:layout_height="10dp" />
 
         <TextView
-            android:id="@+id/nombreMascotaTag"
+            android:id="@+id/diastextv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -152,7 +152,7 @@
             android:layout_height="12dp" />
 
         <TextView
-            android:id="@+id/textView27"
+            android:id="@+id/fechaitextv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -175,7 +175,7 @@
             android:layout_height="12dp" />
 
         <TextView
-            android:id="@+id/textView29"
+            android:id="@+id/fechaftextv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -231,7 +231,7 @@
             android:layout_height="10dp" />
 
         <Button
-            android:id="@+id/button11"
+            android:id="@+id/revClientButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"

@@ -10,7 +10,6 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_main_admin.*
 import kotlinx.android.synthetic.main.activity_main_client.*
 
 class MainClientActivity : AppCompatActivity() {
@@ -31,7 +30,9 @@ class MainClientActivity : AppCompatActivity() {
         chatButton.setOnClickListener { startChat() }
 
         // Reservación
-
+        resbutton.setOnClickListener {
+            startActivity(Intent(this, ReserveClientActivity::class.java))
+        }
     }
     private fun startChat(){
         val currentUser = auth.currentUser
@@ -63,7 +64,7 @@ class MainClientActivity : AppCompatActivity() {
     }
     private fun setup( ) {
         title = "Cliente"
-        button11.setOnClickListener {
+        revClientButton.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
             onBackPressed()
         }

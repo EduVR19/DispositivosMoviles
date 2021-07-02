@@ -4,51 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainAdmin">
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="411dp"
-        android:layout_height="51dp"
-        app:cardBackgroundColor="#039E48"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="286dp"
-        android:layout_height="wrap_content"
-        android:text="Reservación actual"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        style="@style/Widget.AppCompat.ImageButton"
-        android:layout_width="48dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="103dp"
-        android:backgroundTint="@color/purple_700"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_revert"
-        app:tint="#FFFFFF" />
+    tools:context=".ReserveClientActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="402dp"
-        android:layout_height="234dp"
+        android:layout_width="368dp"
+        android:layout_height="241dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.627"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
+        app:layout_constraintTop_toBottomOf="@+id/textView23"
+        app:layout_constraintVertical_bias="0.208">
 
         <TextView
             android:id="@+id/TextView16"
@@ -130,6 +98,47 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="286dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="36dp"
+        android:text="Reservación actual"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageButton9"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <ImageButton
+        android:id="@+id/imageButton9"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="48dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="72dp"
+        android:backgroundTint="@color/purple_700"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:drawable/ic_menu_revert"
+        app:tint="#FFFFFF" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="411dp"
+        android:layout_height="51dp"
+        app:cardBackgroundColor="#039E48"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="408dp"
@@ -137,7 +146,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="0.926">
 
         <Button
             android:id="@+id/revClientButton"
@@ -146,7 +158,6 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/custom_button"
-            android:text="Iniciar videollamada" />
+            android:text="Hacer Reservación" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

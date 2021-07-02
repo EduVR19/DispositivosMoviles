@@ -6,19 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".ReserveAdminActivity">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="411dp"
-        android:layout_height="51dp"
-        app:cardBackgroundColor="#3F51B5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="409dp"
-        android:layout_height="109dp"
+        android:layout_width="408dp"
+        android:layout_height="47dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
 
         <TextView
             android:id="@+id/textView4"
@@ -30,8 +25,10 @@
             android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
             app:layout_constraintStart_toEndOf="@+id/imageButton"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.468" />
 
         <ImageButton
             android:id="@+id/imageButton"
@@ -48,10 +45,19 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="411dp"
+        android:layout_height="51dp"
+        app:cardBackgroundColor="#3F51B5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="399dp"
-        android:layout_height="323dp"
+        android:layout_width="385dp"
+        android:layout_height="417dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +78,7 @@
             android:layout_height="10dp" />
 
         <TextView
-            android:id="@+id/nombreMascotaTag"
+            android:id="@+id/diastextv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -80,45 +86,43 @@
             android:textColor="#000000"
             android:textSize="17sp" />
 
-        <TextView
-            android:id="@+id/textView26"
+        <EditText
+            android:id="@+id/fechaieditt"
             android:layout_width="match_parent"
             android:layout_height="31dp"
             android:layout_marginLeft="10sp"
             android:layout_marginRight="20sp"
             android:background="#D3C2C2"
-            android:backgroundTint="#F4EBEB"
-            android:text="TextView" />
+            android:backgroundTint="#F4EBEB" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="12dp" />
 
         <TextView
-            android:id="@+id/textView27"
+            android:id="@+id/fechaftextv2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Fecha de inicio"
+            android:text="Fecha de Inicio"
             android:textColor="#000000"
             android:textSize="17sp" />
 
-        <TextView
+        <EditText
             android:id="@+id/textView28"
             android:layout_width="match_parent"
             android:layout_height="31dp"
             android:layout_marginLeft="10sp"
             android:layout_marginRight="20sp"
             android:background="#D3C2C2"
-            android:backgroundTint="#F4EBEB"
-            android:text="TextView" />
+            android:backgroundTint="#F4EBEB" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="12dp" />
 
         <TextView
-            android:id="@+id/textView29"
+            android:id="@+id/fechaftextv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -126,18 +130,21 @@
             android:textColor="#000000"
             android:textSize="17sp" />
 
-        <TextView
-            android:id="@+id/textView30"
+        <EditText
+            android:id="@+id/fechafeditt"
             android:layout_width="match_parent"
             android:layout_height="31dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="20dp"
             android:background="#D3C2C2"
-            android:backgroundTint="#F4EBEB"
-            android:text="TextView" />
+            android:backgroundTint="#F4EBEB" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/clienttextvi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10sp"
@@ -146,15 +153,38 @@
             android:textColor="#000000"
             android:textSize="17sp" />
 
-        <TextView
-            android:id="@+id/textView3"
+        <EditText
+            android:id="@+id/clienteeditt"
             android:layout_width="match_parent"
             android:layout_height="31dp"
             android:layout_marginLeft="10sp"
             android:layout_marginRight="20sp"
             android:background="#D3C2C2"
             android:backgroundTint="#F4EBEB"
-            android:text="TextView" />
+            android:hint="Usa el gmail" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
+
+        <TextView
+            android:id="@+id/notastextvi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="20sp"
+            android:text="Notas"
+            android:textColor="#000000"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/notaseditt"
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="20sp"
+            android:background="#D3C2C2"
+            android:backgroundTint="#F4EBEB" />
 
     </LinearLayout>
 
@@ -164,16 +194,14 @@
         android:layout_height="84dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="2dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/button11"
+            android:id="@+id/buttonreserve"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/custom_button"
-            android:text="Hacer reservación" />
+            android:text="Crear Reservación" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
