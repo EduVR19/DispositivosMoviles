@@ -7,13 +7,7 @@ import android.os.Bundle
 import android.view.KeyEvent
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_auth.*
-import kotlinx.android.synthetic.main.activity_reserve.*
-import kotlinx.android.synthetic.main.activity_reserve.fechafeditt
-import kotlinx.android.synthetic.main.activity_reserve.fechaieditt
-import kotlinx.android.synthetic.main.activity_reserve.imageButton
 import kotlinx.android.synthetic.main.activity_reserve_admin.*
-import kotlinx.android.synthetic.main.activity_reserve_client.*
 
 class ReserveAdminActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,15 +24,15 @@ class ReserveAdminActivity : AppCompatActivity() {
         title ="Crear Reservacion"
         val db = FirebaseFirestore.getInstance()
         buttonreserve.setOnClickListener {
-            if (fechafeditt.text.isNotEmpty() && fechaieditt.text.isNotEmpty() && clienteeditt.text.isNotEmpty()) {
+            if (fechafin.text.isNotEmpty() && diasviw.text.isNotEmpty() && clienteeditt.text.isNotEmpty()) {
                 val clienteee = clienteeditt.text.toString()
-                db.collection("Reservación").document(clienteee).get().addOnCompleteListener {
+                db.collection("Reservacion").document(clienteee).get().addOnCompleteListener {
                     // Reservación
-                    val diaf = fechafeditt.text.toString()
-                    val diai = fechaieditt.text.toString()
-                    val dias = fechaieditt.text.toString()
+                    val diaf = fechafin.text.toString()
+                    val diai = fechainicioedit.text.toString()
+                    val dias = diasviw.text.toString()
                     val not = notaseditt.text.toString()
-                    var reservacion = Reservacion(diaf, diai, dias, not, "8")
+                    var reservacion = ReservacionClassClass(diaf, diai, dias, not, "8")
 
                     db.collection("Reservacion").document(clienteee).set(reservacion)
 

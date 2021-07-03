@@ -68,7 +68,7 @@
             android:id="@+id/TextView16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Datos de mi reservación"
+            android:text="Datos de la reservación"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="18sp" />
@@ -87,7 +87,7 @@
             android:textSize="17sp" />
 
         <EditText
-            android:id="@+id/fechaieditt"
+            android:id="@+id/diasviw"
             android:layout_width="match_parent"
             android:layout_height="31dp"
             android:layout_marginLeft="10sp"
@@ -109,7 +109,7 @@
             android:textSize="17sp" />
 
         <EditText
-            android:id="@+id/textView28"
+            android:id="@+id/fechainicioedit"
             android:layout_width="match_parent"
             android:layout_height="31dp"
             android:layout_marginLeft="10sp"
@@ -131,7 +131,7 @@
             android:textSize="17sp" />
 
         <EditText
-            android:id="@+id/fechafeditt"
+            android:id="@+id/fechafin"
             android:layout_width="match_parent"
             android:layout_height="31dp"
             android:layout_marginLeft="10dp"

@@ -31,8 +31,13 @@ class MainClientActivity : AppCompatActivity() {
 
         // Reservación
         resbutton.setOnClickListener {
-            startActivity(Intent(this, ReserveClientActivity::class.java))
+            val homeIntent = Intent(this, ReserveClientActivity::class.java).apply {
+                putExtra("email", email)
+                // putExtra("provider", provider.name)
+            }
+            startActivity(homeIntent)
         }
+
     }
     private fun startChat(){
         val currentUser = auth.currentUser

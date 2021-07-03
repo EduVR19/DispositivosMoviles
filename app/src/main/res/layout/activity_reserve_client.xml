@@ -8,15 +8,14 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="368dp"
-        android:layout_height="241dp"
+        android:layout_width="361dp"
+        android:layout_height="322dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.627"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView23"
-        app:layout_constraintVertical_bias="0.208">
+        app:layout_constraintVertical_bias="0.3">
 
         <TextView
             android:id="@+id/TextView16"
@@ -36,16 +35,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Días"
+            android:text="Hora de Entrada"
             android:textColor="#000000"
             android:textSize="17sp" />
 
         <TextView
-            android:id="@+id/fechaieditt"
+            android:id="@+id/ffff"
+            android:layout_width="325dp"
+            android:layout_height="31dp"
+            android:text="TextView" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
+
+        <TextView
+            android:id="@+id/diastextv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Hora de Salida"
+            android:textColor="#000000"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/horaentrada2"
             android:layout_width="match_parent"
             android:layout_height="31dp"
-            android:layout_marginLeft="10sp"
-            android:layout_marginRight="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
             android:background="#D3C2C2"
             android:backgroundTint="#F4EBEB"
             android:text="TextView" />
@@ -64,11 +82,11 @@
             android:textSize="17sp" />
 
         <TextView
-            android:id="@+id/textView28"
+            android:id="@+id/fechainicioview"
             android:layout_width="match_parent"
             android:layout_height="31dp"
-            android:layout_marginLeft="10sp"
-            android:layout_marginRight="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
             android:background="#D3C2C2"
             android:backgroundTint="#F4EBEB"
             android:text="TextView" />
@@ -87,7 +105,7 @@
             android:textSize="17sp" />
 
         <TextView
-            android:id="@+id/fechafeditt"
+            android:id="@+id/fechafinviw"
             android:layout_width="match_parent"
             android:layout_height="31dp"
             android:layout_marginLeft="10dp"
@@ -109,25 +127,7 @@
         android:textColor="#000000"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageButton9"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
-
-    <ImageButton
-        android:id="@+id/imageButton9"
-        style="@style/Widget.AppCompat.ImageButton"
-        android:layout_width="48dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="72dp"
-        android:backgroundTint="@color/purple_700"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:drawable/ic_menu_revert"
-        app:tint="#FFFFFF" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -137,7 +137,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+    </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:id="@+id/linearLayout4"
@@ -152,12 +154,24 @@
         app:layout_constraintVertical_bias="0.926">
 
         <Button
-            android:id="@+id/revClientButton"
+            android:id="@+id/buttondos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/custom_button"
-            android:text="Hacer Reservación" />
+            android:text="Crear Reservacion" />
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/holahola"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="48dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/purple_700"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toStartOf="@+id/textView23"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.175"
+        app:srcCompat="@android:drawable/ic_menu_revert"
+        app:tint="#FFFFFF" />
 </androidx.constraintlayout.widget.ConstraintLayout>
