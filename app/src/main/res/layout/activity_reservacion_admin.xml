@@ -10,7 +10,9 @@
         android:id="@+id/cardView"
         android:layout_width="411dp"
         android:layout_height="51dp"
-        app:cardBackgroundColor="#3F51B5" />
+        app:cardBackgroundColor="#3F51B5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView6"
@@ -53,7 +55,7 @@
         android:id="@+id/button6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Regresar al Menu Principal"
+        android:text="Ver lista de reservaciones"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

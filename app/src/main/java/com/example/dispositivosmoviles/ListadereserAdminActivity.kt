@@ -4,26 +4,27 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
-import kotlinx.android.synthetic.main.activity_auth.*
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_listadereser_admin.*
 import kotlinx.android.synthetic.main.activity_reservacion_admin.*
 
-class ReservacionAdminActivity : AppCompatActivity() {
+class ListadereserAdminActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_reservacion_admin)
+        setContentView(R.layout.activity_listadereser_admin)
 
-        button5.setOnClickListener {
-            startActivity(Intent(this, ReserveAdminActivity::class.java))
-        }
+        setup()
 
-        imageButton3.setOnClickListener {
-            startActivity(Intent(this, MainAdminActivity::class.java))
-        }
-
-        button6.setOnClickListener {
-            startActivity(Intent(this, ListadereserAdminActivity::class.java))
+        Botonregresarbutton.setOnClickListener {
+            startActivity(Intent(this, ReservacionAdminActivity::class.java))
         }
     }
+
+    private fun setup(){
+        val db = FirebaseFirestore.getInstance()
+        
+    }
+
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK){
             finishAffinity();

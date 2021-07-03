@@ -45,6 +45,14 @@ class ReserveClientActivity : AppCompatActivity() {
             }
             startActivity(homeIn)
         }
+        buttondos.setOnClickListener {
+            val homeIn = Intent(this, CrearreservacionClientActivity::class.java).apply {
+                putExtra("email", email)
+                // putExtra("provider", provider.name)
+            }
+            startActivity(homeIn)
+        }
+
     }
 
 

@@ -71,7 +71,7 @@ class MainClientActivity : AppCompatActivity() {
         title = "Cliente"
         revClientButton.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
-            onBackPressed()
+            startActivity(Intent(this, AuthActivity::class.java))
         }
     }
 
