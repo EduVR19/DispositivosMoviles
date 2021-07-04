@@ -4,9 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.dispositivosmoviles.MainClientActivity
 import com.example.dispositivosmoviles.models.Chat
 import com.example.dispositivosmoviles.adapters.ChatAdapter
 import com.example.dispositivosmoviles.R
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_list_of_chats.*
@@ -26,7 +28,22 @@ class ListOfChatsActivity : AppCompatActivity() {
         if (user.isNotEmpty()){
             initViews()
         }
+
+        val db = FirebaseFirestore.getInstance()
+
+        /* backButtonListOfChats.setOnClickListener {
+            showClientHome(it.result?.user?.email ?: "")
+        }*/
+
     }
+
+    /*private fun showClientHome(email: String) {
+        val clientHomeIntent = Intent(this, MainClientActivity::class.java).apply {
+            putExtra("email", email)
+            // putExtra("provider", provider.name)
+        }
+        startActivity(clientHomeIntent)
+    }*/
 
     private fun initViews(){
         newChatButton.setOnClickListener { newChat() }

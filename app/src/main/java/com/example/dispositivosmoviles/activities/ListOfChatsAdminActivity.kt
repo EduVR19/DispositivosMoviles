@@ -4,11 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.dispositivosmoviles.MainAdminActivity
 import com.example.dispositivosmoviles.models.Chat
 import com.example.dispositivosmoviles.adapters.ChatAdapter
 import com.example.dispositivosmoviles.R
+import com.example.dispositivosmoviles.SignUpActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_auth.*
 import kotlinx.android.synthetic.main.activity_list_of_chats_admin.*
 import kotlinx.android.synthetic.main.activity_list_of_chats_admin.listChatsRecyclerView
 import java.util.*
@@ -26,6 +29,11 @@ class ListOfChatsAdminActivity : AppCompatActivity() {
 
         if (user.isNotEmpty()){
             initViews()
+        }
+
+        backButton.setOnClickListener {
+            val backButtonIntent = Intent(this, MainAdminActivity::class.java)
+            startActivity(backButtonIntent)
         }
     }
 

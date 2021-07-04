@@ -10,7 +10,10 @@
         android:id="@+id/toolbar"
         layout="@layout/activity_nav_bar"
         android:layout_width="411dp"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -24,220 +27,221 @@
         app:srcCompat="@drawable/ic_left_arrow__1_" />
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="365dp"
-        android:layout_height="229dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="94dp">
-
-        <TextView
-            android:id="@+id/TextView16"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Mis datos"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/diastextv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Nombre"
-            android:textColor="#000000"
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/nameClient"
-            android:layout_width="match_parent"
-            android:layout_height="31dp"
-            android:layout_marginLeft="10sp"
-            android:layout_marginRight="20sp"
-            android:background="#D3C2C2"
-            android:backgroundTint="#F4EBEB"
-            android:padding="4dp"
-            android:text="TextView" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="12dp" />
-
-        <TextView
-            android:id="@+id/fechaitextv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Correo"
-            android:textColor="#000000"
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/emailClient"
-            android:layout_width="match_parent"
-            android:layout_height="31dp"
-            android:layout_marginLeft="10sp"
-            android:layout_marginRight="20sp"
-            android:background="#D3C2C2"
-            android:backgroundTint="#F4EBEB"
-            android:padding="4dp"
-            android:text="TextView" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="12dp" />
-
-        <TextView
-            android:id="@+id/fechaftextv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Teléfono"
-            android:textColor="#000000"
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/phoneClient"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
-            android:background="#D3C2C2"
-            android:backgroundTint="#F4EBEB"
-            android:padding="4dp"
-            android:text="TextView" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="366dp"
-        android:layout_height="222dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="325dp">
-
-
-        <TextView
-            android:id="@+id/misDatos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Datos de mi mascota"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/miNombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Nombre"
-            android:textColor="#000000"
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/petNameclient"
-            android:layout_width="match_parent"
-            android:layout_height="31dp"
-            android:layout_marginLeft="10sp"
-            android:layout_marginRight="20sp"
-            android:background="#D3C2C2"
-            android:backgroundTint="#F4EBEB"
-            android:padding="4dp"
-            android:text="TextView" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="12dp" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Raza"
-            android:textColor="#000000"
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/petRaceClient"
-            android:layout_width="match_parent"
-            android:layout_height="31dp"
-            android:layout_marginLeft="10sp"
-            android:layout_marginRight="20sp"
-            android:background="#D3C2C2"
-            android:backgroundTint="#F4EBEB"
-            android:padding="4dp"
-            android:text="TextView" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="12dp" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Edad (años)"
-            android:textColor="#000000"
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/petAgeClient"
-            android:layout_width="match_parent"
-            android:layout_height="31dp"
-            android:layout_marginLeft="10sp"
-            android:layout_marginRight="20sp"
-            android:background="#D3C2C2"
-            android:backgroundTint="#F4EBEB"
-            android:padding="4dp"
-            android:text="TextView" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="347dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="564dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-        <Button
-            android:id="@+id/chatButton"
+        <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/custom_button"
-            android:text="Iniciar chat" />
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
 
-        <Button
-            android:id="@+id/resbutton"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/custom_button"
-            android:text="Ver reservación" />
+            <TextView
+                android:id="@+id/misDatos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Datos de mi mascota"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="18sp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
+            <TextView
+                android:id="@+id/miNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Nombre"
+                android:textColor="#000000"
+                android:textSize="17sp" />
 
-        <Button
-            android:id="@+id/revClientButton"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/custom_button"
-            android:text="Cerrar sesión" />
+            <TextView
+                android:id="@+id/petNameclient"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="20sp"
+                android:background="#D3C2C2"
+                android:backgroundTint="#F4EBEB"
+                android:padding="4dp"
+                android:text="TextView" />
 
-        <Space
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Raza"
+                android:textColor="#000000"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/petRaceClient"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="20sp"
+                android:background="#D3C2C2"
+                android:backgroundTint="#F4EBEB"
+                android:padding="4dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Edad (años)"
+                android:textColor="#000000"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/petAgeClient"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="20sp"
+                android:background="#D3C2C2"
+                android:backgroundTint="#F4EBEB"
+                android:padding="4dp"
+                android:text="TextView" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
-            android:layout_height="10dp" />
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/TextView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mis datos"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/diastextv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Nombre"
+                android:textColor="#000000"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/nameClient"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="20sp"
+                android:background="#D3C2C2"
+                android:backgroundTint="#F4EBEB"
+                android:padding="4dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/fechaitextv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Correo"
+                android:textColor="#000000"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/emailClient"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="20sp"
+                android:background="#D3C2C2"
+                android:backgroundTint="#F4EBEB"
+                android:padding="4dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/fechaftextv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Teléfono"
+                android:textColor="#000000"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/phoneClient"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:background="#D3C2C2"
+                android:backgroundTint="#F4EBEB"
+                android:padding="4dp"
+                android:text="TextView" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/chatButton"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/custom_button"
+                android:text="Iniciar chat" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <Button
+                android:id="@+id/resbutton"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/custom_button"
+                android:text="Ver reservación" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <Button
+                android:id="@+id/revClientButton"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/custom_button"
+                android:text="Cerrar sesión" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
