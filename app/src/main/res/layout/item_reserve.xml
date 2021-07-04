@@ -6,83 +6,103 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_width="0dp"
+        android:layout_height="82dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:textAlignment="gravity"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_width="369dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="93dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:textAlignment="textStart">
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Correo:"
+                    android:textAlignment="textStart"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/textView14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:text="Fecha Inicio:"
+                    android:textAlignment="textStart"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
 
-                    <TextView
-                        android:id="@+id/correoNameText"
-                        android:layout_width="137dp"
-                        android:layout_height="wrap_content"
-                        android:text="TextView"
-                        android:textAlignment="textStart"
-                        android:textColor="#9A000000"
-                        android:textSize="10sp" />
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha Fin:"
+                    android:textAlignment="textStart"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
 
-                    <Space
-                        android:layout_width="40dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Notas:"
+                    android:textAlignment="textStart"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
 
-                    <TextView
-                        android:id="@+id/inicioNameText"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:text="TextView"
-                        android:textAlignment="textStart"
-                        android:textSize="10sp" />
+            </LinearLayout>
 
-                    <Space
-                        android:layout_width="40dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/finNameText"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:text="TextView"
-                        android:textAlignment="textStart"
-                        android:textSize="10sp" />
+                <TextView
+                    android:id="@+id/correoNameText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textAlignment="textStart"
+                    android:textColor="#9A000000"
+                    android:textSize="14sp" />
 
-                    <Space
-                        android:layout_width="40dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
+                <TextView
+                    android:id="@+id/inicioNameText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textAlignment="textStart"
+                    android:textSize="14sp" />
 
-                    <TextView
-                        android:id="@+id/notasNameText"
-                        android:layout_width="100dp"
-                        android:layout_height="51dp"
-                        android:layout_weight="1"
-                        android:text="TextView"
-                        android:textAlignment="textStart"
-                        android:textSize="10sp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/finNameText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textAlignment="textStart"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/notasNameText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textAlignment="textStart"
+                    android:textSize="14sp" />
+            </LinearLayout>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
