@@ -9,16 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DispositivosMoviles">
-<<<<<<< Updated upstream
         <activity android:name=".NavBarActivity"></activity>
-=======
-<<<<<<< HEAD
         <activity android:name=".ReservacionCambioAdminActivity"></activity>
         <activity android:name=".InformacionClienteReservacionActivity" />
-=======
-        <activity android:name=".NavBarActivity"></activity>
->>>>>>> 481b490759c93ba2409e6f26acf89a7850277def
->>>>>>> Stashed changes
         <activity android:name=".CrearreservacionClientActivity" />
         <activity android:name=".ReserveClientActivity" />
         <activity android:name=".ListadereserAdminActivity" />

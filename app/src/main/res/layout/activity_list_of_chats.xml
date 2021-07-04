@@ -20,11 +20,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:tint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_left_arrow__1_" />
+        app:srcCompat="@drawable/ic_left_arrow__1_"
+        app:tint="#FFFFFF" />
 
     <LinearLayout
         android:layout_width="379dp"
@@ -42,20 +42,16 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
+
             <ImageView
                 android:id="@+id/imageViewSS"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="10dp"
-                android:tint="#DB873E"
-                app:srcCompat="@drawable/ic_back" />
+                app:srcCompat="@drawable/ic_back"
+                app:tint="#DB873E" />
 
-=======
->>>>>>> 481b490759c93ba2409e6f26acf89a7850277def
->>>>>>> Stashed changes
+
             <Button
                 android:id="@+id/newChatButton"
                 android:layout_width="match_parent"
