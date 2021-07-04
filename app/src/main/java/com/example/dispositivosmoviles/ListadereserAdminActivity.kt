@@ -5,10 +5,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.*
+import com.google.firebase.firestore.ktx.toObject
+import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_auth.*
+import kotlinx.android.synthetic.main.activity_auth.passwordEditText
 import kotlinx.android.synthetic.main.activity_list_of_reserves.*
+import kotlinx.android.synthetic.main.activity_main_admin.*
+import kotlinx.android.synthetic.main.activity_sign_up.*
 
 
 class ListadereserAdminActivity : AppCompatActivity() {
@@ -38,6 +47,9 @@ class ListadereserAdminActivity : AppCompatActivity() {
             startActivity(Intent(this, ReservacionAdminActivity::class.java))
         }
 
+        cambiarbutton.setOnClickListener {
+            cambiarinfo()
+        }
 
     }
 
@@ -73,4 +85,47 @@ class ListadereserAdminActivity : AppCompatActivity() {
         }
         return super.onKeyDown(keyCode, event)
     }
+
+    private fun cambiarinfo(){
+        val db = FirebaseFirestore.getInstance()
+        val email = edittextuser.text.toString()
+        val docref = db.collection("Usuarios").document(email)
+        docref.get()
+            .addOnSuccessListener{
+                val user = it.toObject<UsuarioClass>()
+                if (user != null ) {
+                    val homeIntent = Intent(this, InformacionClienteReservacionActivity::class.java).apply {
+                        putExtra("email", email)
+                        // putExtra("provider", provider.name)
+                    }
+                    startActivity(homeIntent)
+                } else {
+                    showAlert2()
+                }
+            }
+            .addOnFailureListener{
+                showAlert2()
+            }
+    }
+    private fun showAlert()
+    {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("Debe seleccionar un usuario")
+        builder.setPositiveButton("Aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
+    private fun showAlert2()
+    {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("El cliente no existe")
+        builder.setPositiveButton("Aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
+
 }

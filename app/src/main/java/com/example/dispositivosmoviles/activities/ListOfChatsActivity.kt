@@ -8,10 +8,10 @@ import com.example.dispositivosmoviles.MainClientActivity
 import com.example.dispositivosmoviles.models.Chat
 import com.example.dispositivosmoviles.adapters.ChatAdapter
 import com.example.dispositivosmoviles.R
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_list_of_chats.*
+import kotlinx.android.synthetic.main.activity_reserve_admin.*
 import java.util.*
 
 class ListOfChatsActivity : AppCompatActivity() {
@@ -29,21 +29,16 @@ class ListOfChatsActivity : AppCompatActivity() {
             initViews()
         }
 
-        val db = FirebaseFirestore.getInstance()
-
-        /* backButtonListOfChats.setOnClickListener {
-            showClientHome(it.result?.user?.email ?: "")
-        }*/
-
-    }
-
-    /*private fun showClientHome(email: String) {
-        val clientHomeIntent = Intent(this, MainClientActivity::class.java).apply {
-            putExtra("email", email)
-            // putExtra("provider", provider.name)
+        imageButton.setOnClickListener {
+            val bundle: Bundle? = intent.extras
+            val email:String? = bundle?.getString("email")
+            val homeIntent = Intent(this, MainClientActivity::class.java).apply {
+                putExtra("email", email)
+                // putExtra("provider", provider.name)
+            }
+            startActivity(homeIntent)
         }
-        startActivity(clientHomeIntent)
-    }*/
+    }
 
     private fun initViews(){
         newChatButton.setOnClickListener { newChat() }

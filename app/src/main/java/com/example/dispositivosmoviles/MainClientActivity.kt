@@ -43,7 +43,11 @@ class MainClientActivity : AppCompatActivity() {
         val currentUser = auth.currentUser
 
         if(currentUser != null){
-            val intent = Intent(this, ListOfChatsActivity::class.java)
+            val bundle: Bundle? = intent.extras
+            val email:String? = bundle?.getString("email")
+            val intent = Intent(this, ListOfChatsActivity::class.java).apply{
+                putExtra("email", email)
+            }
             intent.putExtra("user", currentUser.email)
             startActivity(intent)
 

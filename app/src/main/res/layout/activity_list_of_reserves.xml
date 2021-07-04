@@ -41,12 +41,32 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="match_parent"
+            android:layout_width="248dp"
             android:layout_height="wrap_content"
             android:text="Reservaciones"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="34sp" />
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
+=======
+>>>>>>> 481b490759c93ba2409e6f26acf89a7850277def
+>>>>>>> Stashed changes
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -100,14 +120,38 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleView"
-        android:layout_width="411dp"
-        android:layout_height="0dp"
+        android:layout_width="408dp"
+        android:layout_height="459dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/cambiarbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
         tools:listitem="@layout/item_reserve" />
+
+    <Button
+        android:id="@+id/cambiarbutton"
+        android:layout_width="148dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="8dp"
+        android:text="Cambiar Informacion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/edittextuser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Correo del Usuario"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cambiarbutton"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recycleView"
+        app:layout_constraintVertical_bias="0.567" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
