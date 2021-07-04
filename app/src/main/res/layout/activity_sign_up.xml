@@ -6,25 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".SignUpActivity">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="411dp"
-        android:layout_height="51dp"
-        app:cardBackgroundColor="#3F51B5" />
-
-    <ImageButton
-        android:id="@+id/imageButton4"
-        style="@style/Widget.AppCompat.ImageButton"
-        android:layout_width="48dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="56dp"
-        android:backgroundTint="@color/purple_700"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_revert"
-        app:tint="#FFFFFF" />
-
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
@@ -32,19 +13,42 @@
         tools:layout_editor_absoluteY="76dp" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
+        android:id="@+id/linearLayout14"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/white"
+            app:srcCompat="@drawable/ic_back"
+            app:tint="#DB873E" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="291dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:baselineAligned="false"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout14">
 
         <TextView
             android:id="@+id/textView"
@@ -57,8 +61,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:scrollbarSize="10dp" />
+            android:layout_height="16dp" />
 
         <EditText
             android:id="@+id/emailEditText"
@@ -129,10 +132,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/register"
-                android:textSize="12sp"
                 android:background="@drawable/custom_button"
-                />
+                android:text="@string/register"
+                android:textSize="12sp" />
 
         </LinearLayout>
 

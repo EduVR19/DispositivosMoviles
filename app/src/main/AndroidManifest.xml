@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DispositivosMoviles">
         <activity android:name=".CrearreservacionClientActivity"></activity>
-        <activity android:name=".ListadereserAdminActivity" />
         <activity android:name=".ReserveClientActivity" />
+        <activity android:name=".ListadereserAdminActivity" />
         <activity android:name=".activities.ChatActivity" />
         <activity android:name=".activities.ListOfChatsAdminActivity" />
         <activity android:name=".activities.ListOfChatsActivity" />

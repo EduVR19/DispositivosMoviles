@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="369dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/correoNameText"
+                        android:layout_width="137dp"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textAlignment="textStart"
+                        android:textColor="#9A000000"
+                        android:textSize="10sp" />
+
+                    <Space
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/inicioNameText"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textAlignment="textStart"
+                        android:textSize="10sp" />
+
+                    <Space
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/finNameText"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textAlignment="textStart"
+                        android:textSize="10sp" />
+
+                    <Space
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/notasNameText"
+                        android:layout_width="100dp"
+                        android:layout_height="51dp"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:textAlignment="textStart"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,8 +9,6 @@ import androidx.appcompat.app.AlertDialog
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.toObject
 import kotlinx.android.synthetic.main.activity_crearreservacion_client.*
-import kotlinx.android.synthetic.main.activity_reserve_admin.*
-import kotlinx.android.synthetic.main.activity_reserve_client.*
 
 class CrearreservacionClientActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,11 +39,12 @@ class CrearreservacionClientActivity : AppCompatActivity() {
             if (fechafin2.text.isNotEmpty() && fechainicioedit2.text.isNotEmpty()) {
                 db.collection("Reservacion").document(email).get().addOnCompleteListener {
                     // Reservación
+                    val corr = email
                     val diaf = fechafin2.text.toString()
                     val diai = fechainicioedit2.text.toString()
                     val dias = diasviw2.text.toString()
                     val not = notaseditt2.text.toString()
-                    var reservacion = ReservacionClassClass(diaf, diai, dias, not, "8")
+                    var reservacion = ReservacionClassClass(corr,diaf, diai, dias, not, "8")
 
                     db.collection("Reservacion").document(email).set(reservacion)
 

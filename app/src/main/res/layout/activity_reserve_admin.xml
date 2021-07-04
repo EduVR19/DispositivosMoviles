@@ -6,63 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".ReserveAdminActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="408dp"
-        android:layout_height="47dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView">
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="286dp"
-            android:layout_height="wrap_content"
-            android:text="Crear reservación"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="34sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.508"
-            app:layout_constraintStart_toEndOf="@+id/imageButton"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.468" />
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            style="@style/Widget.AppCompat.ImageButton"
-            android:layout_width="48dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="16dp"
-            android:backgroundTint="@color/purple_700"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/ic_menu_revert"
-            app:tint="#FFFFFF" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="411dp"
-        android:layout_height="51dp"
-        app:cardBackgroundColor="#3F51B5"
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearLayout13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/white"
+            app:srcCompat="@drawable/ic_back"
+            app:tint="#DB873E" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crear reservación"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="34sp" />
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="385dp"
         android:layout_height="417dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout13">
 
         <TextView
             android:id="@+id/TextView16"
@@ -93,7 +85,8 @@
             android:layout_marginLeft="10sp"
             android:layout_marginRight="20sp"
             android:background="#D3C2C2"
-            android:backgroundTint="#F4EBEB" />
+            android:backgroundTint="#F4EBEB"
+            android:padding="5dp" />
 
         <Space
             android:layout_width="match_parent"
@@ -115,7 +108,8 @@
             android:layout_marginLeft="10sp"
             android:layout_marginRight="20sp"
             android:background="#D3C2C2"
-            android:backgroundTint="#F4EBEB" />
+            android:backgroundTint="#F4EBEB"
+            android:padding="5dp" />
 
         <Space
             android:layout_width="match_parent"
@@ -137,7 +131,8 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="20dp"
             android:background="#D3C2C2"
-            android:backgroundTint="#F4EBEB" />
+            android:backgroundTint="#F4EBEB"
+            android:padding="5dp" />
 
         <Space
             android:layout_width="match_parent"
@@ -161,7 +156,8 @@
             android:layout_marginRight="20sp"
             android:background="#D3C2C2"
             android:backgroundTint="#F4EBEB"
-            android:hint="Usa el gmail" />
+            android:hint="Usa el gmail"
+            android:padding="5dp" />
 
         <Space
             android:layout_width="match_parent"
@@ -184,24 +180,31 @@
             android:layout_marginLeft="10sp"
             android:layout_marginRight="20sp"
             android:background="#D3C2C2"
-            android:backgroundTint="#F4EBEB" />
+            android:backgroundTint="#F4EBEB"
+            android:padding="5dp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="408dp"
-        android:layout_height="84dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <Button
             android:id="@+id/buttonreserve"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Crear Reservación" />
+            android:text="Crear Reservación"
+            android:background="@drawable/custom_button"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

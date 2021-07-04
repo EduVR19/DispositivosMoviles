@@ -9,9 +9,17 @@ data class UsuarioClass(
 
 )
 
-public data class Mascota(
+data class Mascota(
     var nombre : String? = "",
     var sexo : String? ="",
     var edad : String? =""
 )
+
+data class Reservacion (
+    var fechainicio: String? = "",
+    var fechafin: String? = ""
+
+)
+
+
 
