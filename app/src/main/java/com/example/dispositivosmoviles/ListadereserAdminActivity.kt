@@ -86,26 +86,31 @@ class ListadereserAdminActivity : AppCompatActivity() {
         return super.onKeyDown(keyCode, event)
     }
 
-    private fun cambiarinfo(){
+    private fun cambiarinfo() {
         val db = FirebaseFirestore.getInstance()
         val email = edittextuser.text.toString()
-        val docref = db.collection("Usuarios").document(email)
-        docref.get()
-            .addOnSuccessListener{
-                val user = it.toObject<UsuarioClass>()
-                if (user != null ) {
-                    val homeIntent = Intent(this, InformacionClienteReservacionActivity::class.java).apply {
-                        putExtra("email", email)
-                        // putExtra("provider", provider.name)
+        if (edittextuser.text.isNotEmpty()) {
+            val docref = db.collection("Usuarios").document(email)
+            docref.get()
+                .addOnSuccessListener {
+                    val user = it.toObject<UsuarioClass>()
+                    if (user != null) {
+                        val homeIntent = Intent(this, InformacionClienteReservacionActivity::class.java).apply {
+                                putExtra("email", email)
+                                // putExtra("provider", provider.name)
+                            }
+                        startActivity(homeIntent)
+                    } else {
+                        showAlert2()
                     }
-                    startActivity(homeIntent)
-                } else {
+                }
+                .addOnFailureListener {
                     showAlert2()
                 }
-            }
-            .addOnFailureListener{
-                showAlert2()
-            }
+        }
+        else{
+            showAlert()
+        }
     }
     private fun showAlert()
     {

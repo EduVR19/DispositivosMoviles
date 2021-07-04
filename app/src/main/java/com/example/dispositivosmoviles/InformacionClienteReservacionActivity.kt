@@ -60,7 +60,7 @@ class InformacionClienteReservacionActivity : AppCompatActivity() {
                 textView36.text = user?.mascota?.edad
             }
         button3uuu.setOnClickListener {
-            if (Nombrecliente.text.toString() != null && Telefonoclientee.text.toString() != null && mosta.text.toString() != null && edadmosa.text.toString() != null && razamaso.text.toString() != null){
+            if (Nombrecliente.text.isNotEmpty() && Telefonoclientee.text.isNotEmpty() && mosta.text.isNotEmpty() && edadmosa.text.isNotEmpty() && razamaso.text.isNotEmpty()){
                 val telefono = Telefonoclientee.text.toString()
                 val nombre = Nombrecliente.text.toString()
 

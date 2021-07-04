@@ -67,8 +67,8 @@ class MainClientActivity : AppCompatActivity() {
                 emailClient.text = user?.correo.toString()
                 phoneClient.text = user?.telefono.toString()
                 petNameclient.text = user?.mascota?.nombre
-                petRaceClient.text = user?.mascota?.sexo
-                petAgeClient.text = user?.mascota?.edad
+                petRaceClient.text = user?.mascota?.edad
+                petAgeClient.text = user?.mascota?.sexo
             }
     }
     private fun setup( ) {

@@ -15,11 +15,7 @@ data class Mascota(
     var edad : String? =""
 )
 
-data class Reservacion (
-    var fechainicio: String? = "",
-    var fechafin: String? = ""
 
-)
 
 
 

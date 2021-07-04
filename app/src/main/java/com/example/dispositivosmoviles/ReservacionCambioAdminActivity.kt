@@ -49,8 +49,9 @@ class ReservacionCambioAdminActivity : AppCompatActivity() {
                 diiii.text = user?.dias.toString()
 
             }
+
         button3uuu2.setOnClickListener {
-            if (fechafineditt.text.toString() != null && fechainieditt.text.toString() != null && notasedditt.text.toString() != null && diasedittes.text.toString() != null){
+            if (fechainieditt.text.isNotEmpty() && notasedditt.text.isNotEmpty() && diasedittes.text.isNotEmpty()){
                 val fechafin =  fechafineditt.text.toString()
                 val fechainicio = fechainieditt.text.toString()
                 val dias = diasedittes.text.toString()
