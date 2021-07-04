@@ -4,13 +4,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.dispositivosmoviles.ListadereserAdminActivity
+import com.example.dispositivosmoviles.MainAdminActivity
 import com.example.dispositivosmoviles.models.Chat
 import com.example.dispositivosmoviles.adapters.ChatAdapter
 import com.example.dispositivosmoviles.R
+import com.example.dispositivosmoviles.ReservacionAdminActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_list_of_chats_admin.*
 import kotlinx.android.synthetic.main.activity_list_of_chats_admin.listChatsRecyclerView
+import kotlinx.android.synthetic.main.activity_reservacion_admin.*
 import java.util.*
 
 class ListOfChatsAdminActivity : AppCompatActivity() {
@@ -26,6 +30,9 @@ class ListOfChatsAdminActivity : AppCompatActivity() {
 
         if (user.isNotEmpty()){
             initViews()
+        }
+        imageButton7.setOnClickListener {
+            startActivity(Intent(this, MainAdminActivity::class.java))
         }
     }
 

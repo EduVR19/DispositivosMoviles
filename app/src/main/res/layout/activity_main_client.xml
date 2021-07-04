@@ -12,6 +12,8 @@
         android:layout_width="411dp"
         android:layout_height="wrap_content" />
 
+<<<<<<< HEAD
+=======
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
@@ -23,13 +25,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_left_arrow__1_" />
 
+>>>>>>> 481b490759c93ba2409e6f26acf89a7850277def
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="365dp"
         android:layout_height="229dp"
         android:orientation="vertical"
+<<<<<<< Updated upstream
         tools:layout_editor_absoluteX="23dp"
         tools:layout_editor_absoluteY="94dp">
+=======
+<<<<<<< HEAD
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+=======
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="94dp">
+>>>>>>> 481b490759c93ba2409e6f26acf89a7850277def
+>>>>>>> Stashed changes
 
         <TextView
             android:id="@+id/TextView16"

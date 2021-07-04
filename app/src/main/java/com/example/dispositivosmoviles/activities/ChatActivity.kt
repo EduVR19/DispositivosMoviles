@@ -1,15 +1,18 @@
 package com.example.dispositivosmoviles.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dispositivosmoviles.adapters.MessageAdapter
 import com.example.dispositivosmoviles.R
+import com.example.dispositivosmoviles.ReserveClientActivity
 import com.example.dispositivosmoviles.models.Message
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_chat.*
+import kotlinx.android.synthetic.main.activity_main_client.*
 
 class ChatActivity : AppCompatActivity() {
     private var chatId = ""
@@ -27,6 +30,7 @@ class ChatActivity : AppCompatActivity() {
         if(chatId.isNotEmpty() && user.isNotEmpty()) {
             initViews()
         }
+
     }
 
     private fun initViews(){
