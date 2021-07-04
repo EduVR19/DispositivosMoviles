@@ -8,37 +8,39 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout11"
-        android:layout_width="match_parent"
+        layout="@layout/activity_nav_bar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/imageButton3"
-            style="@style/Widget.AppCompat.ImageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:backgroundTint="@color/white"
-            android:textAlignment="center"
-            app:srcCompat="@drawable/ic_back"
-            app:tint="#DB873E" />
+    <ImageButton
+        android:id="@+id/imageButton3"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/green"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_left_arrow__1_"
+        app:tint="@color/white" />
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Reservaciones"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="34sp" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Reservaciones"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TableRow
         android:id="@+id/tableRow"
@@ -51,7 +53,7 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout11">
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
 
         <CalendarView
             android:id="@+id/calendarView"

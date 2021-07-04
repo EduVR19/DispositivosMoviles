@@ -8,34 +8,24 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"
+        layout="@layout/activity_nav_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout17"
-        android:layout_width="379dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ImageButton
+        android:id="@+id/imageButton6"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="74dp"
+        android:layout_height="58dp"
+        android:backgroundTint="@color/green"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
-
-        <ImageButton
-            android:id="@+id/imageButton6"
-            style="@style/Widget.AppCompat.ImageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:backgroundTint="@color/white"
-            android:textAlignment="center"
-            app:srcCompat="@drawable/ic_back"
-            app:tint="#DB873E" />
-
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_left_arrow__1_"
+        app:tint="#FFFFFF" />
 
     <LinearLayout
         android:id="@+id/linearLayout16"
@@ -47,7 +37,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout17">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <TextView
             android:id="@+id/textView8"
@@ -87,13 +77,20 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout9"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout16">
 
         <Button
             android:id="@+id/verchat"
-            android:layout_width="222dp"
+            android:layout_width="match_parent"
             android:layout_height="56dp"
             android:height="70dp"
             android:background="@drawable/custom_button"

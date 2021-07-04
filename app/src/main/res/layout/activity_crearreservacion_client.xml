@@ -9,40 +9,26 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout10"
-        android:layout_width="match_parent"
+        layout="@layout/activity_nav_bar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/regre"
-            style="@style/Widget.AppCompat.ImageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:backgroundTint="@color/white"
-            android:scrollbarSize="30dp"
-            android:textAlignment="center"
-            app:srcCompat="@drawable/ic_back"
-            app:tint="#DB873E" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Crear reservación"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="34sp" />
-    </LinearLayout>
+    <ImageButton
+        android:id="@+id/regre"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:scrollbarSize="30dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_left_arrow__1_"
+        app:tint="#FFFFFF" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -53,7 +39,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.615"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crear reservación"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="34sp" />
 
         <TextView
             android:id="@+id/TextView16"

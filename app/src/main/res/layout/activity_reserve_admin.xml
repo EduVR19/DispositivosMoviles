@@ -8,31 +8,38 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"
+        layout="@layout/activity_nav_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:backgroundTint="@color/green"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_left_arrow__1_"
+        app:tint="#FFFFFF" />
+
     <LinearLayout
-        android:id="@+id/linearLayout13"
-        android:layout_width="match_parent"
+        android:id="@+id/linearLayout3"
+        android:layout_width="385dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:orientation="horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/buttonreserve"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            style="@style/Widget.AppCompat.ImageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:backgroundTint="@color/white"
-            app:srcCompat="@drawable/ic_back"
-            app:tint="#DB873E" />
 
         <TextView
             android:id="@+id/textView4"
@@ -42,19 +49,10 @@
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="34sp" />
-    </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="385dp"
-        android:layout_height="417dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout13">
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
 
         <TextView
             android:id="@+id/TextView16"
@@ -67,7 +65,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="10dp" />
+            android:layout_height="16dp" />
 
         <TextView
             android:id="@+id/diastextv"
@@ -185,26 +183,18 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="0dp"
+    <Button
+        android:id="@+id/buttonreserve"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:orientation="vertical"
+        android:layout_marginBottom="84dp"
+        android:background="@drawable/custom_button"
+        android:text="Crear Reservación"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
-
-        <Button
-            android:id="@+id/buttonreserve"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Crear Reservación"
-            android:background="@drawable/custom_button"/>
-    </LinearLayout>
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

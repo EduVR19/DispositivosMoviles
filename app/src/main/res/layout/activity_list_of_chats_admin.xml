@@ -8,7 +8,24 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
+        layout="@layout/activity_nav_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@color/green"
+        android:tint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_left_arrow__1_" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -21,29 +38,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/textView7"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/imageButton7"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="#FFFFFF"
-                android:tint="#DB873E"
-                app:srcCompat="@drawable/ic_back" />
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Chats"
-                android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="24sp" />
-
-        </LinearLayout>
+            android:layout_height="match_parent"
+            android:text="Chats"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="24sp" />
 
         <Space
             android:layout_width="match_parent"
@@ -53,7 +55,9 @@
             android:id="@+id/listChatsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/item_chat" />
+            tools:listitem="@layout/item_chat">
+
+        </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

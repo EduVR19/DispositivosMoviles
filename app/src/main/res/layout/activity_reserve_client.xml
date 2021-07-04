@@ -8,29 +8,25 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout15"
-        android:layout_width="match_parent"
+        layout="@layout/activity_nav_bar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/holahola"
-            style="@style/Widget.AppCompat.ImageButton"
-            android:layout_width="48dp"
-            android:layout_height="40dp"
-            android:backgroundTint="@color/white"
-            app:srcCompat="@drawable/ic_back"
-            app:tint="@color/maroon" />
-    </LinearLayout>
+    <ImageButton
+        android:id="@+id/holahola"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="48dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/green"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_left_arrow__1_"
+        app:tint="@color/white" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -39,11 +35,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttondos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout15"
-        app:layout_constraintVertical_bias="0.3">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <TextView
             android:id="@+id/textView23"
@@ -53,6 +48,10 @@
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="34sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
 
         <TextView
             android:id="@+id/TextView16"
@@ -65,7 +64,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="10dp" />
+            android:layout_height="16dp" />
 
         <TextView
             android:id="@+id/diastextv"
@@ -171,15 +170,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+        app:layout_constraintStart_toStartOf="parent">
 
-        <Button
-            android:id="@+id/buttondos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_button"
-            android:text="Crear Reservacion" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/buttondos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/custom_button"
+        android:text="Crear Reservacion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

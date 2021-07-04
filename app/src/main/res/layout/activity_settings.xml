@@ -8,7 +8,9 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"
+        layout="@layout/activity_nav_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,14 +21,12 @@
         android:layout_width="48dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="347dp"
-        android:backgroundTint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/green"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:srcCompat="@drawable/ic_back"
-        app:tint="@color/maroon" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_left_arrow__1_"
+        app:tint="@color/white" />
 
     <Spinner
         android:id="@+id/spinner"

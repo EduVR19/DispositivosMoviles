@@ -7,33 +7,37 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"
-        android:layout_width="411dp"
+        layout="@layout/activity_nav_bar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/Botonregresarbutton"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/green"
+        android:textAlignment="textStart"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_left_arrow__1_"
+        app:tint="#FFFFFF" />
+
     <LinearLayout
-        android:id="@+id/linearLayout8"
+        android:id="@+id/linearLayout5"
         android:layout_width="379dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
-
-        <ImageButton
-            android:id="@+id/Botonregresarbutton"
-            style="@style/Widget.AppCompat.ImageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:backgroundTint="@color/white"
-            android:textAlignment="textStart"
-            app:srcCompat="@drawable/ic_back"
-            app:tint="#DB873E" />
 
         <TextView
             android:id="@+id/textView2"
@@ -43,19 +47,6 @@
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="34sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout5"
-        android:layout_width="379dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
 
         <LinearLayout
             android:layout_width="match_parent"
