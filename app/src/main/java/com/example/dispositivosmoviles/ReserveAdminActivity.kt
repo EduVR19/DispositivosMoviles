@@ -28,11 +28,12 @@ class ReserveAdminActivity : AppCompatActivity() {
                 val clienteee = clienteeditt.text.toString()
                 db.collection("Reservacion").document(clienteee).get().addOnCompleteListener {
                     // Reservación
+                    val cor = clienteeditt.text.toString()
                     val diaf = fechafin.text.toString()
                     val diai = fechainicioedit.text.toString()
                     val dias = diasviw.text.toString()
                     val not = notaseditt.text.toString()
-                    var reservacion = ReservacionClassClass(diaf, diai, dias, not, "8")
+                    var reservacion = ReservacionClassClass(cor,diaf, diai, dias, not,"8")
 
                     db.collection("Reservacion").document(clienteee).set(reservacion)
 
