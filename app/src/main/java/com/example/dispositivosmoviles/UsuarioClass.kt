@@ -5,6 +5,7 @@ data class UsuarioClass(
     var nombre : String? = "",
     var telefono : String? = "",
     var admin : Boolean? = null,
+    var bloquear: Boolean? = null,
     var mascota : Mascota? = null,
 
 )

@@ -27,6 +27,14 @@ class ReservacionCambioAdminActivity : AppCompatActivity() {
         }
 
         infrese(email ?: "")
+
+        button3.setOnClickListener {
+            val db = FirebaseFirestore.getInstance()
+            db.collection("Reservacion").document(email.toString())
+                .delete()
+                .addOnSuccessListener { showAlertEmail2() }
+                .addOnFailureListener {  }
+        }
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
@@ -78,6 +86,21 @@ class ReservacionCambioAdminActivity : AppCompatActivity() {
     }
 
     private fun showAlertEmail()
+    {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Registro exitoso")
+        builder.setMessage("Cambio la informacion")
+        builder.setPositiveButton("Aceptar", DialogInterface.OnClickListener { dialog, id ->
+            // Mandar de nuevo a la pantalla de login
+            val loginIntent = Intent(this, ListadereserAdminActivity::class.java)
+            startActivity(loginIntent)
+
+        })
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+
+    }
+    private fun showAlertEmail2()
     {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Registro exitoso")

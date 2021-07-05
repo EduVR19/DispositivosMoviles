@@ -165,4 +165,14 @@
         app:layout_constraintStart_toEndOf="@+id/button3uuu"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout9" />
 
+    <Button
+        android:id="@+id/bloquearbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bloquear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button3uuu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

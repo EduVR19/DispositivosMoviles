@@ -4,6 +4,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.KeyEvent
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.firestore.FirebaseFirestore
@@ -46,6 +47,8 @@ class InformacionClienteReservacionActivity : AppCompatActivity() {
                 }
             }
         }
+
+        bloquearbutton.setOnClickListener { block(email ?: "") }
     }
     private fun info(email: String){
         val db = FirebaseFirestore.getInstance()
@@ -70,7 +73,7 @@ class InformacionClienteReservacionActivity : AppCompatActivity() {
                 val edadperro = edadmosa.text.toString()
                 var mascotaNueva = Mascota(nombrePerro,razaPerro,edadperro)
 
-                var usuarioNuevo = UsuarioClass(email,nombre,telefono,false,mascotaNueva)
+                var usuarioNuevo = UsuarioClass(email,nombre,telefono,false, false,mascotaNueva)
                 showAlertEmail()
                 db.collection("Usuarios").document(email).set(usuarioNuevo)
             }
@@ -119,5 +122,40 @@ class InformacionClienteReservacionActivity : AppCompatActivity() {
             System.exit(0);
         }
         return super.onKeyDown(keyCode, event)
+    }
+
+    private fun block(email: String){
+        val db = FirebaseFirestore.getInstance()
+        val telefono = ""
+        val nombre = ""
+
+        //mascota
+        val nombrePerro = ""
+        val razaPerro = ""
+        val edadperro = ""
+        var mascotaNueva = Mascota(nombrePerro,razaPerro,edadperro)
+
+        var usuarioNuevo = UsuarioClass(email,nombre,telefono,false, true,mascotaNueva)
+        showAlertEmail()
+        db.collection("Usuarios").document(email).set(usuarioNuevo)
+        db.collection("Reservacion").document(email)
+            .delete()
+            .addOnSuccessListener {  }
+            .addOnFailureListener {  }
+    }
+    private fun showAlertEmail2()
+    {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Registro exitoso")
+        builder.setMessage("Cambio la informacion")
+        builder.setPositiveButton("Aceptar", DialogInterface.OnClickListener { dialog, id ->
+            // Mandar de nuevo a la pantalla de login
+            val loginIntent = Intent(this, ListadereserAdminActivity::class.java)
+            startActivity(loginIntent)
+
+        })
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+
     }
 }

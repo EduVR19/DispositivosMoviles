@@ -43,7 +43,7 @@ class AuthActivity : AppCompatActivity() {
                     val docref = db.collection("Usuarios").document(email)
                     docref.get().addOnSuccessListener {
                         val user = it.toObject<UsuarioClass>()
-                        if(user?.admin == false){
+                        if(user?.admin == false && user?.bloquear == false){
                             FirebaseAuth.getInstance().
                             signInWithEmailAndPassword(emailEditText.text.toString(),passwordEditText.text.toString())
                                 .addOnCompleteListener{
@@ -62,7 +62,7 @@ class AuthActivity : AppCompatActivity() {
                         }
                         else
                         {
-                            showAlert2("No eres administrador")
+                            showAlert2("No eres usuario")
                         }
                     }
                         .addOnFailureListener{
@@ -77,7 +77,7 @@ class AuthActivity : AppCompatActivity() {
                         if(user==null){
                             showAlert2("el user dio null")
                         }
-                        if(user?.admin == true){
+                        if(user?.admin == true && user?.bloquear == false){
                             FirebaseAuth.getInstance().
                             signInWithEmailAndPassword(emailEditText.text.toString(),passwordEditText.text.toString())
                                 .addOnCompleteListener{
