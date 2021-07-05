@@ -10,6 +10,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_main_admin.*
 import kotlinx.android.synthetic.main.activity_main_client.*
 
 class MainClientActivity : AppCompatActivity() {
@@ -27,7 +28,7 @@ class MainClientActivity : AppCompatActivity() {
 
 
         //Chat
-        chatButton.setOnClickListener { startChat() }
+        chatButtonClient.setOnClickListener { startChat() }
 
         // Reservación
         resbutton.setOnClickListener {
@@ -43,11 +44,7 @@ class MainClientActivity : AppCompatActivity() {
         val currentUser = auth.currentUser
 
         if(currentUser != null){
-            val bundle: Bundle? = intent.extras
-            val email:String? = bundle?.getString("email")
-            val intent = Intent(this, ListOfChatsActivity::class.java).apply{
-                putExtra("email", email)
-            }
+            val intent = Intent(this, ListOfChatsActivity::class.java)
             intent.putExtra("user", currentUser.email)
             startActivity(intent)
 

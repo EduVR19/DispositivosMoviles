@@ -28,16 +28,6 @@ class ListOfChatsActivity : AppCompatActivity() {
         if (user.isNotEmpty()){
             initViews()
         }
-
-        imageButton.setOnClickListener {
-            val bundle: Bundle? = intent.extras
-            val email:String? = bundle?.getString("email")
-            val homeIntent = Intent(this, MainClientActivity::class.java).apply {
-                putExtra("email", email)
-                // putExtra("provider", provider.name)
-            }
-            startActivity(homeIntent)
-        }
     }
 
     private fun initViews(){

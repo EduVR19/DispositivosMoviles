@@ -210,7 +210,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/chatButton"
+                android:id="@+id/chatButtonClient"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/custom_button"
