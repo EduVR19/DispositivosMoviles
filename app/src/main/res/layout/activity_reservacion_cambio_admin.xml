@@ -157,7 +157,7 @@
 
         <Switch
             android:id="@+id/switch2"
-            android:layout_width="203dp"
+            android:layout_width="198dp"
             android:layout_height="38dp"
             android:text="Check out" />
 
