@@ -31,6 +31,14 @@ class ChatActivity : AppCompatActivity() {
             initViews()
         }
 
+        imageButton8.setOnClickListener{
+            val bundle: Bundle? = intent.extras
+            val email:String? = bundle?.getString("email")
+            val intent = Intent(this, ListOfChatsActivity::class.java).apply {
+                putExtra("email", email)
+            }
+            startActivity(intent)
+        }
     }
 
     private fun initViews(){

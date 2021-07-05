@@ -28,6 +28,17 @@ class ListOfChatsActivity : AppCompatActivity() {
         if (user.isNotEmpty()){
             initViews()
         }
+
+        backButtonListOfChats.setOnClickListener{
+            val bundle: Bundle? = intent.extras
+            val email:String? = bundle?.getString("email")
+            val intent = Intent(this, MainClientActivity::class.java).apply {
+                putExtra("email", email)
+            }
+            startActivity(intent)
+
+            finish()
+        }
     }
 
     private fun initViews(){
@@ -62,7 +73,11 @@ class ListOfChatsActivity : AppCompatActivity() {
     }
 
     private fun chatSelected(chat: Chat){
-        val intent = Intent(this, ChatActivity::class.java)
+        val bundle: Bundle? = intent.extras
+        val email:String? = bundle?.getString("email")
+        val intent = Intent(this, ChatActivity::class.java).apply {
+            putExtra("email", email)
+        }
         intent.putExtra("chatId", chat.id)
         intent.putExtra("user", user)
         startActivity(intent)
