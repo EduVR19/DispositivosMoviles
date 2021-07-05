@@ -33,7 +33,7 @@ class ReserveAdminActivity : AppCompatActivity() {
                     val diai = fechainicioedit.text.toString()
                     val dias = diasviw.text.toString()
                     val not = notaseditt.text.toString()
-                    var reservacion = ReservacionClassClass(cor,diaf, diai, dias, not,"8")
+                    var reservacion = ReservacionClassClass(cor,diaf, diai, dias, not,"8", false, false)
 
                     db.collection("Reservacion").document(clienteee).set(reservacion)
 

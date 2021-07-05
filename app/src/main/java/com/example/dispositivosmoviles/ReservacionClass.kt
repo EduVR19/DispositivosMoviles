@@ -6,6 +6,8 @@ data class ReservacionClassClass(
     var fechainicio: String? = "",
     var dias: String? = "",
     var nota: String? = "",
-    var hora: String? = ""
+    var hora: String? = "",
+    var checkin: Boolean? = null,
+    var checkout: Boolean? = null
 
 )

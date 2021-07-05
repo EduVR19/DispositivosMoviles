@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
 import androidx.appcompat.app.AlertDialog
+import androidx.core.util.rangeTo
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.toObject
 import kotlinx.android.synthetic.main.activity_informacion_cliente_reservacion.*
@@ -55,7 +56,13 @@ class ReservacionCambioAdminActivity : AppCompatActivity() {
                 fechafinn.text = user?.fechafin.toString()
                 notaas.text = user?.nota.toString()
                 diiii.text = user?.dias.toString()
+                if (user?.checkin == true){
+                    switch1.isChecked = true
+                }
 
+                if (user?.checkout == true){
+                    switch2.isChecked = true
+                }
             }
 
         button3uuu2.setOnClickListener {
@@ -64,13 +71,13 @@ class ReservacionCambioAdminActivity : AppCompatActivity() {
                 val fechainicio = fechainieditt.text.toString()
                 val dias = diasedittes.text.toString()
                 val notas = notasedditt.text.toString()
+                val checkin = switch1.isChecked
+                val checkout = switch2.isChecked
 
-
-                var usuarioNuevo = ReservacionClassClass(email, fechafin, fechainicio, dias, notas, "8")
+                var usuarioNuevo = ReservacionClassClass(email, fechafin, fechainicio, dias, notas, "8", checkin, checkout)
                 showAlertEmail()
                 db.collection("Reservacion").document(email).set(usuarioNuevo)
             }
-
             else{
                 showAlert()
             }

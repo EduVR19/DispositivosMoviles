@@ -54,8 +54,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout8"
-        android:layout_width="363dp"
-        android:layout_height="483dp"
+        android:layout_width="373dp"
+        android:layout_height="530dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/button3uuu2"
         app:layout_constraintEnd_toEndOf="parent"
