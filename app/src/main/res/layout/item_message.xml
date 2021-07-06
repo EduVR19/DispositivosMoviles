@@ -35,7 +35,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/otherMessageLayout"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="1dp"
@@ -48,7 +48,21 @@
         app:layout_constraintTop_toBottomOf="@+id/myMessageLayout"
         app:layout_constraintVertical_bias="1.0">
 
+
         <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="hola"
+            app:layout_constraintStart_toStartOf="@id/otherMessageLayout"
+            app:layout_constraintTop_toTopOf="@id/otherMessageLayout"
+            android:background="@color/yellow"
+            android:id="@+id/otherMessageName"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="8dp"
+            />
+
+        <TextView
+
             android:id="@+id/othersMessageTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
