@@ -55,9 +55,38 @@
             android:id="@+id/listChatsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            tools:itemCount="7"
             tools:listitem="@layout/item_chat">
 
         </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/ic_group" />
+
+        <Button
+            android:id="@+id/newChatButtonAdmins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            android:text="Iniciar chat grupal con Admins" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
