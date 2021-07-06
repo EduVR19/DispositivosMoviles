@@ -77,4 +77,27 @@
             app:cornerRadius="30dp" />
     </LinearLayout>
 
+    <EditText
+        android:id="@+id/admincorreo"
+        android:layout_width="270dp"
+        android:layout_height="43dp"
+        android:ems="10"
+        android:hint="Correo"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/crearadminbuton"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
+        app:layout_constraintVertical_bias="0.484" />
+
+    <Button
+        android:id="@+id/crearadminbuton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crear Admin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
