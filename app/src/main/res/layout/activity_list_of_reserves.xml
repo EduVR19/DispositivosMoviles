@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Reservaciones"
+        android:text="@string/reservaciones"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="34sp"
@@ -63,7 +63,7 @@
                 android:layout_width="218dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Hora de entrada:"
+                android:text="@string/hora_de_entrada"
                 android:textColor="#000000"
                 android:textSize="14sp" />
 
@@ -87,7 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Hora de salida"
+                android:text="@string/hora_de_salida"
                 android:textColor="#000000"
                 android:textSize="14sp" />
 
@@ -132,7 +132,7 @@
             android:layout_width="197dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Correo del Usuario"
+            android:hint="@string/correo_del_usuario"
             android:inputType="textPersonName" />
 
         <Button
@@ -140,7 +140,7 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:background="@drawable/custom_button"
-            android:text="Cambiar Informacion" />
+            android:text="@string/cambiar_informacion" />
 
     </LinearLayout>
 

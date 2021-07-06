@@ -50,7 +50,7 @@
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Información"
+                android:text="@string/informacion"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="34sp" />
@@ -63,7 +63,7 @@
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nombre del Cliente" />
+                android:text="@string/clientName" />
 
             <TextView
                 android:id="@+id/textView31"
@@ -81,7 +81,7 @@
                 android:id="@+id/textView24"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Telefono del Cliente" />
+                android:text="@string/telephoneClient" />
 
             <TextView
                 android:id="@+id/textView32"
@@ -99,7 +99,7 @@
                 android:id="@+id/textView25"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Mascota del Cliente" />
+                android:text="@string/mascota_del_cliente" />
 
             <TextView
                 android:id="@+id/textView34"
@@ -117,7 +117,7 @@
                 android:id="@+id/textView26"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Edad Macota" />
+                android:text="@string/edad_macota" />
 
             <TextView
                 android:id="@+id/textView35"
@@ -135,7 +135,7 @@
                 android:id="@+id/textView27"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Raza" />
+                android:text="@string/raza" />
 
             <TextView
                 android:id="@+id/textView36"
@@ -166,7 +166,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:text="Bloquear"
+                android:text="@string/bloquear"
                 android:textAlignment="center" />
 
             <Space
@@ -180,7 +180,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:text="Guardar" />
+                android:text="@string/guardar" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -193,7 +193,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:text="Reservacion" />
+                android:text="@string/reservacion" />
         </LinearLayout>
 
     </LinearLayout>

@@ -10,7 +10,7 @@
         android:id="@+id/button3uuu2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Guardar"
+        android:text="@string/guardar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,7 +66,7 @@
             android:id="@+id/textView29"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Correo (Cliente)" />
+            android:text="@string/correo_cliente" />
 
         <TextView
             android:id="@+id/gmail"
@@ -81,7 +81,7 @@
             android:id="@+id/textView37"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fecha de Inicio" />
+            android:text="@string/fecha_de_inicio" />
 
         <TextView
             android:id="@+id/fechaini"
@@ -99,7 +99,7 @@
             android:id="@+id/textView39"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fecha Fin" />
+            android:text="@string/fecha_de_fin" />
 
         <TextView
             android:id="@+id/fechafinn"
@@ -135,7 +135,7 @@
             android:id="@+id/textView42"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Notas" />
+            android:text="@string/notas" />
 
         <TextView
             android:id="@+id/notaas"
@@ -167,7 +167,7 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Borrar"
+        android:text="@string/borrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button3uuu2"
         app:layout_constraintStart_toStartOf="parent" />

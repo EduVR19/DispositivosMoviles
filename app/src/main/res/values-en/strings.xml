@@ -27,7 +27,51 @@
     <string name="telephone">Cell phone</string>
     <!-- Esto es la pantalla settings-->
     <string name="changeButton">Change</string>
-
+    <string name="menssageHint">Message</string>
+    <string name="send">Send</string>
+    <string name="Clients">Clients</string>
+    <string name="notifications">Notifications</string>
+    <string name="ver_chat">Chat</string>
+    <string name="admin">"Admin "</string>
+    <string name="crear_reservacion">Create reservation</string>
+    <string name="datos_reservacion">Reservation data</string>
+    <string name="fecha_de_inicio">Start date</string>
+    <string name="fecha_de_fin">End date</string>
+    <string name="cliente">Client</string>
+    <string name="notas">Notes</string>
+    <string name="informacion">Information</string>
+    <string name="clientName">Client name</string>
+    <string name="telephoneClient">Client Cellphone</string>
+    <string name="mascota_del_cliente">Client pet</string>
+    <string name="edad_macota">Pet age</string>
+    <string name="raza">Race</string>
+    <string name="bloquear">Block</string>
+    <string name="guardar">Save</string>
+    <string name="reservacion">Reservation</string>
+    <string name="iniciar_chat_con_administrador">Start chat with an admin</string>
+    <string name="reservaciones">Reservations</string>
+    <string name="hora_de_entrada">Entry time:</string>
+    <string name="hora_de_salida">Departure time:</string>
+    <string name="correo_del_usuario">User email</string>
+    <string name="cambiar_informacion">Change info</string>
+    <string name="inicio_administrador">Admin home</string>
+    <string name="ver_reservaciones">View reservations</string>
+    <string name="ver_chats">View chats</string>
+    <string name="crear_admin">Create Admin</string>
+    <string name="datos_de_mi_mascota">My pet info</string>
+    <string name="edad_anos">Age (in years)</string>
+    <string name="mis_datos">My info</string>
+    <string name="ver_reservacion">View reservations</string>
+    <string name="iniciar_chat">Start chat</string>
+    <string name="ver_lista_de_reservaciones">View reservation list</string>
+    <string name="borrar">Delete</string>
+    <string name="correo_cliente">Email (Client)</string>
+    <string name="usa_el_gmail">Use gmail</string>
+    <string name="reservaci_n_actual">Current reservation</string>
+    <string name="correo">Email:</string>
+    <string name="fecha_inicio">Start time:</string>
+    <string name="fecha_fin">End date:</string>
+    <string name="notas2">Notes:</string>
     <string-array name="mensajesList">
         <item>You are not an user</item>
         <item>You are not an admin</item>

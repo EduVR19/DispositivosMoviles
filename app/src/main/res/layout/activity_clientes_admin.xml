@@ -43,7 +43,7 @@
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Clientes"
+            android:text="@string/Clients"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="34sp" />
@@ -62,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Cliente"
+                android:text="@string/Clients"
                 android:textAlignment="center" />
 
             <TextView
@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Notificaciones"
+                android:text="@string/notifications"
                 android:textAlignment="center" />
         </LinearLayout>
 
@@ -94,7 +94,7 @@
             android:layout_height="56dp"
             android:height="70dp"
             android:background="@drawable/custom_button"
-            android:text="Ver chat"
+            android:text="@string/ver_chat"
             app:cornerRadius="30dp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

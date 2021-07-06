@@ -43,7 +43,7 @@
             android:id="@+id/textView30"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre" />
+            android:text="@string/name" />
 
         <TextView
             android:id="@+id/nombrett"
@@ -54,7 +54,7 @@
             android:id="@+id/textView38"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Telefono" />
+            android:text="@string/telephone" />
 
         <TextView
             android:id="@+id/Telefonott"
@@ -65,7 +65,7 @@
             android:id="@+id/textView43"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Correo" />
+            android:text="@string/emailText" />
 
         <TextView
             android:id="@+id/correott"
@@ -77,7 +77,7 @@
         android:id="@+id/Adminbuton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Admin"
+        android:text="@string/admin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

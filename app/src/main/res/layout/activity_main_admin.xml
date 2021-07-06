@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Inicio Administrador"
+        android:text="@string/inicio_administrador"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="34sp"
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:height="70dp"
             android:background="@drawable/custom_button"
-            android:text="Ver reservaciones"
+            android:text="@string/ver_reservaciones"
             app:cornerRadius="30dp" />
 
         <Space
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:height="70dp"
             android:background="@drawable/custom_button"
-            android:text="Ver chats"
+            android:text="@string/ver_chats"
             app:cornerRadius="30dp" />
 
         <Space
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:height="70dp"
             android:background="@drawable/custom_button"
-            android:text="Cerrar sesión"
+            android:text="@string/logOutButton"
             app:cornerRadius="30dp" />
     </LinearLayout>
 
@@ -82,7 +82,7 @@
         android:layout_width="270dp"
         android:layout_height="43dp"
         android:ems="10"
-        android:hint="Correo"
+        android:hint="@string/emailText"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/crearadminbuton"
@@ -95,7 +95,7 @@
         android:id="@+id/crearadminbuton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Crear Admin"
+        android:text="@string/crear_admin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />

@@ -44,7 +44,7 @@
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Crear reservación"
+            android:text="@string/crear_reservacion"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="34sp" />
@@ -57,7 +57,7 @@
             android:id="@+id/TextView16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Datos de la reservación"
+            android:text="@string/datos_reservacion"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="18sp" />
@@ -94,7 +94,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Fecha de Inicio"
+            android:text="@string/fecha_de_inicio"
             android:textColor="#000000"
             android:textSize="17sp" />
 
@@ -117,7 +117,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Fecha de fin"
+            android:text="@string/fecha_de_fin"
             android:textColor="#000000"
             android:textSize="17sp" />
 
@@ -141,7 +141,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10sp"
             android:layout_marginRight="20sp"
-            android:text="Cliente"
+            android:text="@string/cliente"
             android:textColor="#000000"
             android:textSize="17sp" />
 
@@ -153,7 +153,7 @@
             android:layout_marginRight="20sp"
             android:background="#D3C2C2"
             android:backgroundTint="#F4EBEB"
-            android:hint="Usa el gmail"
+            android:hint="@string/usa_el_gmail"
             android:padding="5dp" />
 
         <Space
@@ -166,7 +166,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10sp"
             android:layout_marginRight="20sp"
-            android:text="Notas"
+            android:text="@string/notas"
             android:textColor="#000000"
             android:textSize="17sp" />
 
@@ -191,7 +191,7 @@
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
             android:background="@drawable/custom_button"
-            android:text="Crear Reservación" />
+            android:text="@string/crear_reservacion" />
 
     </LinearLayout>
 
