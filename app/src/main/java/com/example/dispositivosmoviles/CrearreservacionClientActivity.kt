@@ -42,9 +42,8 @@ class CrearreservacionClientActivity : AppCompatActivity() {
                     val corr = email
                     val diaf = fechafin2.text.toString()
                     val diai = fechainicioedit2.text.toString()
-                    val dias = diasviw2.text.toString()
                     val not = notaseditt2.text.toString()
-                    var reservacion = ReservacionClassClass(corr,diaf, diai, dias, not, "8", false, false)
+                    var reservacion = ReservacionClassClass(corr,diaf, diai, not, "8", false, false)
 
                     db.collection("Reservacion").document(email).set(reservacion)
 

@@ -55,7 +55,6 @@ class ReservacionCambioAdminActivity : AppCompatActivity() {
                 fechaini.text = user?.fechainicio.toString()
                 fechafinn.text = user?.fechafin.toString()
                 notaas.text = user?.nota.toString()
-                diiii.text = user?.dias.toString()
                 if (user?.checkin == true){
                     switch1.isChecked = true
                 }
@@ -66,15 +65,14 @@ class ReservacionCambioAdminActivity : AppCompatActivity() {
             }
 
         button3uuu2.setOnClickListener {
-            if (fechainieditt.text.isNotEmpty() && notasedditt.text.isNotEmpty() && diasedittes.text.isNotEmpty()){
+            if (fechainieditt.text.isNotEmpty() && notasedditt.text.isNotEmpty()){
                 val fechafin =  fechafineditt.text.toString()
                 val fechainicio = fechainieditt.text.toString()
-                val dias = diasedittes.text.toString()
                 val notas = notasedditt.text.toString()
                 val checkin = switch1.isChecked
                 val checkout = switch2.isChecked
 
-                var usuarioNuevo = ReservacionClassClass(email, fechafin, fechainicio, dias, notas, "8", checkin, checkout)
+                var usuarioNuevo = ReservacionClassClass(email, fechafin, fechainicio, notas, "8", checkin, checkout)
                 showAlertEmail()
                 db.collection("Reservacion").document(email).set(usuarioNuevo)
             }

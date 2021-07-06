@@ -52,29 +52,14 @@ class ReserveClientActivity : AppCompatActivity() {
         buttondos.setOnClickListener {
             val d = db.collection("Reservacion").document(email.toString())
             d.get().addOnSuccessListener {
-                val user = it.toObject<ReservacionClassClass>()
-                if (user == null) {
                     val homeIn = Intent(this, CrearreservacionClientActivity::class.java).apply {
                         putExtra("email", email)
                     }
                     startActivity(homeIn)
                     // putExtra("provider", provider.name)
-                }
-                else{
-                    showAlertReservacion()
-                }
             }
         }
 
-    }
-
-    private fun showAlertReservacion(){
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Error")
-        builder.setMessage("Ustede ya tiene reservación")
-        builder.setPositiveButton("Aceptar", null)
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {

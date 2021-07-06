@@ -24,16 +24,16 @@ class ReserveAdminActivity : AppCompatActivity() {
         title ="Crear Reservacion"
         val db = FirebaseFirestore.getInstance()
         buttonreserve.setOnClickListener {
-            if (fechafin.text.isNotEmpty() && diasviw.text.isNotEmpty() && clienteeditt.text.isNotEmpty()) {
+            if (fechafin.text.isNotEmpty() && clienteeditt.text.isNotEmpty()) {
                 val clienteee = clienteeditt.text.toString()
                 db.collection("Reservacion").document(clienteee).get().addOnCompleteListener {
                     // Reservación
                     val cor = clienteeditt.text.toString()
                     val diaf = fechafin.text.toString()
                     val diai = fechainicioedit.text.toString()
-                    val dias = diasviw.text.toString()
+
                     val not = notaseditt.text.toString()
-                    var reservacion = ReservacionClassClass(cor,diaf, diai, dias, not,"8", false, false)
+                    var reservacion = ReservacionClassClass(cor,diaf, diai, not,"8", false, false)
 
                     db.collection("Reservacion").document(clienteee).set(reservacion)
 

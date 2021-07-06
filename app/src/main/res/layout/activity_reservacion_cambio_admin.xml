@@ -54,8 +54,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout8"
-        android:layout_width="373dp"
-        android:layout_height="530dp"
+        android:layout_width="386dp"
+        android:layout_height="411dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/button3uuu2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -108,24 +108,6 @@
 
         <EditText
             android:id="@+id/fechafineditt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
-
-        <TextView
-            android:id="@+id/textView45"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Dias" />
-
-        <TextView
-            android:id="@+id/diiii"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <EditText
-            android:id="@+id/diasedittes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
