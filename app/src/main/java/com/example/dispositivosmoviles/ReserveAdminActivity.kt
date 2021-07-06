@@ -19,7 +19,36 @@ class ReserveAdminActivity : AppCompatActivity() {
             startActivity(Intent(this, ReservacionAdminActivity::class.java))
         }
 
+        fechainicioedit.setOnClickListener { showDatePickerDialog() }
+        fechafin.setOnClickListener { showDatePickerDialog2() }
+
     }
+
+    private fun showDatePickerDialog() {
+        val datePicker = DatePickerFragment {
+                day, month, year -> onDateSelected(day, month + 1, year)
+        }
+
+        datePicker.show(supportFragmentManager, "datePicker")
+    }
+
+    fun onDateSelected(day:Int, month:Int, year:Int){
+        fechainicioedit.setText("$day/$month/$year")
+    }
+
+    private fun showDatePickerDialog2() {
+        val datePicker = DatePickerFragment {
+                day, month, year -> onDateSelected2(day, month + 1, year)
+        }
+
+        datePicker.show(supportFragmentManager, "datePicker")
+    }
+
+    fun onDateSelected2(day:Int, month:Int, year:Int){
+        fechafin.setText("$day/$month/$year")
+    }
+
+
     private fun setup(){
         title ="Crear Reservacion"
         val db = FirebaseFirestore.getInstance()

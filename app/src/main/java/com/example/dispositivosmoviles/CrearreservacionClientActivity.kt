@@ -21,6 +21,33 @@ class CrearreservacionClientActivity : AppCompatActivity() {
         crearreseve(email ?: "")
         ggg(email ?: "")
 
+        fechainicioedit2.setOnClickListener { showDatePickerDialog() }
+        fechafin2.setOnClickListener { showDatePickerDialog2() }
+
+    }
+
+    private fun showDatePickerDialog() {
+        val datePicker = DatePickerFragment {
+                day, month, year -> onDateSelected(day, month + 1, year)
+        }
+
+        datePicker.show(supportFragmentManager, "datePicker")
+    }
+
+    fun onDateSelected(day:Int, month:Int, year:Int){
+        fechainicioedit2.setText("$day/$month/$year")
+    }
+
+    private fun showDatePickerDialog2() {
+        val datePicker = DatePickerFragment {
+                day, month, year -> onDateSelected2(day, month + 1, year)
+        }
+
+        datePicker.show(supportFragmentManager, "datePicker")
+    }
+
+    fun onDateSelected2(day:Int, month:Int, year:Int){
+        fechafin2.setText("$day/$month/$year")
     }
 
     private fun crearreseve(email: String){

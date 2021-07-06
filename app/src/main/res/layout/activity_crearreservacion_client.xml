@@ -84,7 +84,9 @@
             android:background="#D3C2C2"
             android:backgroundTint="#F4EBEB"
             android:padding="2dp"
-            android:inputType="date"/>
+            android:inputType="date"
+            android:clickable="false"
+            android:focusable="false"/>
 
         <Space
             android:layout_width="match_parent"
@@ -108,7 +110,9 @@
             android:background="#D3C2C2"
             android:backgroundTint="#F4EBEB"
             android:padding="2dp"
-            android:inputType="date"/>
+            android:inputType="date"
+            android:clickable="false"
+            android:focusable="false"/>
 
         <Space
             android:layout_width="match_parent"

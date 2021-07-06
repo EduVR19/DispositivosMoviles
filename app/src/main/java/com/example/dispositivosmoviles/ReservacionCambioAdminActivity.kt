@@ -36,7 +36,43 @@ class ReservacionCambioAdminActivity : AppCompatActivity() {
                 .addOnSuccessListener { showAlertEmail2() }
                 .addOnFailureListener {  }
         }
+
+        //Date picker
+        fechainieditt.setOnClickListener { showDatePickerDialog() }
+        fechafineditt.setOnClickListener { showDatePickerDialog2() }
+        //Fin Date picker
+
     }
+
+
+    //Date picker
+    private fun showDatePickerDialog() {
+        val datePicker = DatePickerFragment {
+                day, month, year -> onDateSelected(day, month + 1, year)
+        }
+
+        datePicker.show(supportFragmentManager, "datePicker")
+    }
+
+    fun onDateSelected(day:Int, month:Int, year:Int){
+        fechainieditt.setText("$day/$month/$year")
+    }
+
+    private fun showDatePickerDialog2() {
+        val datePicker = DatePickerFragment {
+                day, month, year -> onDateSelected2(day, month + 1, year)
+        }
+
+        datePicker.show(supportFragmentManager, "datePicker")
+    }
+
+    fun onDateSelected2(day:Int, month:Int, year:Int){
+        fechafineditt.setText("$day/$month/$year")
+    }
+    //fin date picker
+
+
+
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK){
