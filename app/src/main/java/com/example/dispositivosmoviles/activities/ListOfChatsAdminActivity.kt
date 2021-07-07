@@ -11,9 +11,13 @@ import com.example.dispositivosmoviles.adapters.ChatAdapter
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_chat.*
 import kotlinx.android.synthetic.main.activity_list_of_chats_admin.*
 import kotlinx.android.synthetic.main.activity_list_of_chats_admin.listChatsRecyclerView
 import kotlinx.android.synthetic.main.activity_reserve_admin.*
+import org.jitsi.meet.sdk.JitsiMeetActivity
+import org.jitsi.meet.sdk.JitsiMeetConferenceOptions
+import java.net.URL
 import java.util.*
 
 class ListOfChatsAdminActivity : AppCompatActivity() {
@@ -33,7 +37,37 @@ class ListOfChatsAdminActivity : AppCompatActivity() {
         backButton.setOnClickListener {
             startActivity(Intent(this, MainAdminActivity::class.java))
         }
+
+        // Inicio Videollamada
+        try {
+            var options = JitsiMeetConferenceOptions.Builder()
+                .setServerURL(URL(""))
+                .setWelcomePageEnabled(false)
+                .build()
+        } catch (e: Exception) {
+            e.printStackTrace()
+            //Toast.makeText(this,e.message,Toast.LENGTH_LONG).show()
+        }
+
+        startVideoCallButtonAdmin.setOnClickListener { startVideoCall() }
+        // Fin Videollamada
     }
+
+    // Inicio Videollamada
+    private fun startVideoCall(){
+        val roomName = "Break4PetsVideollamada"
+
+        if(roomName.length > 0)
+        {
+            val options = JitsiMeetConferenceOptions.Builder()
+                .setRoom(roomName)
+                .build()
+
+            JitsiMeetActivity.launch(this,options)
+        }
+
+    }
+    // Fin Videollamada
 
     private fun initViews(){
 

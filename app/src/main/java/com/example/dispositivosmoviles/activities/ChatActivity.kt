@@ -4,10 +4,12 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dispositivosmoviles.adapters.MessageAdapter
 import com.example.dispositivosmoviles.R
+import com.example.dispositivosmoviles.SignUpActivity
 import com.example.dispositivosmoviles.UsuarioClass
 import com.example.dispositivosmoviles.models.Message
 import com.google.firebase.firestore.FirebaseFirestore
@@ -15,9 +17,13 @@ import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_auth.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_chat.*
+import org.jitsi.meet.sdk.JitsiMeetActivity
+import org.jitsi.meet.sdk.JitsiMeetConferenceOptions
+import java.net.URL
 
 class   ChatActivity : AppCompatActivity() {
     private var chatId = ""
@@ -42,6 +48,21 @@ class   ChatActivity : AppCompatActivity() {
         backButtonChat.setOnClickListener{
             super.onBackPressed()
         }
+
+        // Inicio Videollamada
+        try {
+            var options = JitsiMeetConferenceOptions.Builder()
+                .setServerURL(URL(""))
+                .setWelcomePageEnabled(false)
+                .build()
+        } catch (e: Exception) {
+            e.printStackTrace()
+            //Toast.makeText(this,e.message,Toast.LENGTH_LONG).show()
+        }
+
+        startVideoCallButton.setOnClickListener { startVideoCall() }
+        // Fin Videollamada
+
     }
     private fun galeriaButton(){
         galeriaButton.setOnClickListener{
@@ -53,6 +74,26 @@ class   ChatActivity : AppCompatActivity() {
             startActivityForResult(intent,fileResult)
         }
     }
+
+    // Inicio Videollamada
+    private fun startVideoCall(){
+        val roomName = "Break4PetsVideollamada"
+
+        if(roomName.length > 0)
+        {
+            val options = JitsiMeetConferenceOptions.Builder()
+                .setRoom(roomName)
+                .build()
+
+            JitsiMeetActivity.launch(this,options)
+        }
+
+    }
+    // Fin Videollamada
+
+
+
+
     private fun initViews(){
         messagesRecylerView.layoutManager = LinearLayoutManager(this)
         messagesRecylerView.adapter = MessageAdapter(user)
