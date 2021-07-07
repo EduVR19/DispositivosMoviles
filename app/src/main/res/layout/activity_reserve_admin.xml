@@ -67,29 +67,6 @@
             android:layout_height="16dp" />
 
         <TextView
-            android:id="@+id/diastextv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Días"
-            android:textColor="#000000"
-            android:textSize="17sp" />
-
-        <EditText
-            android:id="@+id/diasviw"
-            android:layout_width="match_parent"
-            android:layout_height="31dp"
-            android:layout_marginLeft="10sp"
-            android:layout_marginRight="20sp"
-            android:background="#D3C2C2"
-            android:backgroundTint="#F4EBEB"
-            android:padding="5dp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="12dp" />
-
-        <TextView
             android:id="@+id/fechaftextv2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -129,7 +106,9 @@
             android:layout_marginRight="20dp"
             android:background="#D3C2C2"
             android:backgroundTint="#F4EBEB"
-            android:padding="5dp" />
+            android:padding="5dp"
+            android:clickable="false"
+            android:focusable="false"/>
 
         <Space
             android:layout_width="match_parent"
@@ -178,7 +157,9 @@
             android:layout_marginRight="20sp"
             android:background="#D3C2C2"
             android:backgroundTint="#F4EBEB"
-            android:padding="5dp" />
+            android:padding="5dp"
+            android:clickable="false"
+            android:focusable="false"/>
 
         <Space
             android:layout_width="match_parent"

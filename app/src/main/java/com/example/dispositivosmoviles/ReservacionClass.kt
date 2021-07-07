@@ -4,7 +4,6 @@ data class ReservacionClassClass(
     var correo: String = "",
     var fechafin: String? = "",
     var fechainicio: String? = "",
-    var dias: String? = "",
     var nota: String? = "",
     var hora: String? = "",
     var checkin: Boolean? = null,

@@ -10,4 +10,9 @@
     <color name="yellow">#FED83D</color>
     <color name="green">#039E48</color>
     <color name="maroon">#DB873E</color>
+
+    <style name="datePickerTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:colorAccent">#039E48</item>
+    </style>
+
 </resources>
