@@ -55,14 +55,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-
+        <Button
+            android:id="@+id/galeriaButton"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:text="Galeria"
+            android:background="@drawable/custom_button"
+            />
         <EditText
             android:id="@+id/messageTextField"
-            android:layout_width="272dp"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:layout_marginLeft="30dp"
             android:hint="@string/menssageHint"
             android:inputType="textPersonName" />
+
 
         <Button
             android:id="@+id/sendMessageButton"

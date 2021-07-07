@@ -13,71 +13,65 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="46dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/myMessageTextView"
-            app:layout_constraintHorizontal_bias="0.081"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            tools:srcCompat="@tools:sample/avatars" />
-
         <TextView
             android:id="@+id/myMessageTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="220dp"
+            android:layout_marginBottom="4dp"
             android:background="@color/green"
             android:gravity="end"
             android:padding="8dp"
             android:text="TextView"
             android:textColor="@android:color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/myImage"
+            app:layout_constraintStart_toStartOf="@id/myMessageLayout" />
+
+        <ImageView
+            android:id="@+id/myImage"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:adjustViewBounds="true"
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toBottomOf="@id/myMessageTextView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            tools:layout_editor_absoluteX="158dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/otherMessageLayout"
         android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
         android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
+
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myMessageLayout"
-        app:layout_constraintVertical_bias="1.0">
 
+        app:layout_constraintTop_toBottomOf="@+id/myMessageLayout">
 
-        <ImageView
-            android:id="@+id/otherImagee"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
+
+            android:id="@+id/otherMessageName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="hola"
-            app:layout_constraintStart_toStartOf="@id/otherMessageLayout"
-            app:layout_constraintTop_toTopOf="@id/otherMessageLayout"
+            android:layout_marginStart="16dp"
+
             android:background="@color/yellow"
-            android:id="@+id/otherMessageName"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="8dp"
+
+            android:text="hola"
+            app:layout_constraintTop_toTopOf="@id/otherMessageLayout"
+
             />
 
         <TextView
@@ -85,18 +79,31 @@
             android:id="@+id/othersMessageTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="64dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="340dp"
             android:layout_marginBottom="8dp"
             android:background="@color/yellow"
             android:padding="8dp"
             android:text="TextView"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@id/otherImage"
+
+            app:layout_constraintTop_toBottomOf="@+id/otherMessageName" />
+
+        <ImageView
+            android:id="@+id/otherImage"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginEnd="156dp"
+
+            android:adjustViewBounds="true"
+
+
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toBottomOf="@id/othersMessageTextView"
+
+            tools:srcCompat="@tools:sample/avatars" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

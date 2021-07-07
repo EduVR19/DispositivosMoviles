@@ -7,6 +7,7 @@ data class UsuarioClass(
     var admin : Boolean? = null,
     var bloquear: Boolean? = null,
     var mascota : Mascota? = null,
+    var imagenes : Int = 0
 
 )
 
