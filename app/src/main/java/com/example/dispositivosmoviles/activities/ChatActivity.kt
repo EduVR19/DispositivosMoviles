@@ -2,6 +2,7 @@ package com.example.dispositivosmoviles.activities
 
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -31,7 +32,6 @@ class   ChatActivity : AppCompatActivity() {
     private val fileResult = 1
     private var db = Firebase.firestore
     private var path : String =""
-    private var imagenes : Int = 0
     private var imgUri : Uri = Uri.parse("")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,7 +67,7 @@ class   ChatActivity : AppCompatActivity() {
     private fun galeriaButton(){
         galeriaButton.setOnClickListener{
             val intent = Intent(Intent.ACTION_GET_CONTENT)
-            if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR2){
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2){
                 intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE,true)
             }
             intent.type ="*/*"
@@ -98,7 +98,7 @@ class   ChatActivity : AppCompatActivity() {
         messagesRecylerView.layoutManager = LinearLayoutManager(this)
         messagesRecylerView.adapter = MessageAdapter(user)
 
-        sendMessageButton.setOnClickListener { sendMessage() }
+        sendMessageButton.setOnClickListener { sendMessage(0) }
 
         val chatRef = db.collection("chats").document(chatId)
 
@@ -144,56 +144,89 @@ class   ChatActivity : AppCompatActivity() {
         dialog.show()
     }
     private fun fileUpload(mUri: Uri) {
-
         val db = FirebaseFirestore.getInstance()
         val docref = db.collection("Usuarios").document(user)
 
 
+        var imagenes : Int
         docref.get()
             .addOnSuccessListener {
-                val user2 = it.toObject<UsuarioClass>()
+                 var user2 = it.toObject<UsuarioClass>()!!
 
-                imagenes = user2!!.imagenes
-        }
-        imagenes++
-        docref.update("imagenes",imagenes)
+                imagenes = user2.imagenes
 
-        val ref = FirebaseStorage.getInstance().reference
-        val folder : StorageReference = FirebaseStorage.getInstance().reference.child("${user}/${imagenes}.jpg")
-        folder.putFile(mUri)
-            .addOnSuccessListener {
-                showAlert2("Sí se subio, checa firebase")
-
-                ref.child("${user}/${imagenes}.jpg").downloadUrl
+                val ref = FirebaseStorage.getInstance().reference
+                val folder : StorageReference = FirebaseStorage.getInstance().reference.child("${user}/${imagenes}.jpg")
+                folder.putFile(mUri)
                     .addOnSuccessListener {
-                        path= it.toString()
-                        sendMessage()
-                        showAlert2("Sí consigiguio el downloarURl y todo")
+                        path=""
+                        //imagenes++
+                        //docref.update("imagenes",imagenes)
+                        showAlert2("Sí se subio, checa firebase, los valores son ${user} y ${imagenes}")
+
+                        ref.child("${user}/${imagenes}.jpg").downloadUrl
+                            .addOnSuccessListener {
+                                path= it.toString()
+
+                                sendMessage(imagenes)
+                                showAlert2("Sí consigiguio el downloarURl y todo")
+                                imagenes++
+                                docref.update("imagenes",imagenes)
+                            }
+                            .addOnFailureListener{
+                                showAlert2("Falló el conseguir el downloadUrl")
+                                path=""
+                            }
                     }
                     .addOnFailureListener{
-                        showAlert2("Falló el conseguir el downloadUrl")
-                        path=""
+                        showAlert2("Falló al subir a firebase")
                     }
             }
-            .addOnFailureListener{
-                showAlert2("Falló al subir a firebase")
-            }
+
+
 
 
     }
 
-    private fun sendMessage(){
-        val message = Message(
-            message = messageTextField.text.toString(),
-            from = user,
-            imgUrl = path,
-        )
+    private fun sendMessage(img : Int){
+
+        if(messageTextField.text.toString() != ""){
+            if(path == ""){
+                val message = Message(
+                    message = messageTextField.text.toString(),
+                    from = user,
+                    imgUrl = "",
+                    numImg = 0
+                )
+                db.collection("chats").document(chatId).collection("messages").document().set(message)
+
+            } else{
+                val message = Message(
+                    message = messageTextField.text.toString(),
+                    from = user,
+                    imgUrl = path,
+                    numImg = img
+                )
 
 
-        db.collection("chats").document(chatId).collection("messages").document().set(message)
+                db.collection("chats").document(chatId).collection("messages").document().set(message)
 
+
+
+            }
+
+        } else{
+            val message = Message(
+                message = "",
+                from = user,
+                imgUrl = path,
+                numImg = img
+            )
+
+
+            db.collection("chats").document(chatId).collection("messages").document().set(message)
+        }
         messageTextField.setText("")
-
 
     }
 }

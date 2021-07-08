@@ -17,7 +17,7 @@
             android:id="@+id/myMessageTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="220dp"
+            android:layout_marginStart="100dp"
             android:layout_marginBottom="4dp"
             android:background="@color/green"
             android:gravity="end"
@@ -25,7 +25,8 @@
             android:text="TextView"
             android:textColor="@android:color/white"
             app:layout_constraintBottom_toTopOf="@id/myImage"
-            app:layout_constraintStart_toStartOf="@id/myMessageLayout" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/myImage"

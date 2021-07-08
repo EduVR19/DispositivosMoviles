@@ -7,5 +7,6 @@ data class Message (
     var message: String = "",
     var from: String = "",
     var dob: Date = Date(),
-    var imgUrl : String=""
+    var imgUrl : String="",
+    var numImg : Int =1
 )

@@ -31,7 +31,7 @@ class MessageAdapter(private val user: String): RecyclerView.Adapter<MessageAdap
 
     private var messages: List<Message> = emptyList()
     private var db = Firebase.firestore
-
+    private var imagenes : Int = 1
     fun setData(list: List<Message>){
         messages = list
         notifyDataSetChanged()
@@ -52,20 +52,22 @@ class MessageAdapter(private val user: String): RecyclerView.Adapter<MessageAdap
         val message = messages[position]
         val storageRef = FirebaseStorage.getInstance().reference
 
+        val db = FirebaseFirestore.getInstance()
+        val docref = db.collection("Usuarios").document(user)
+
         if(user == message.from){
             holder.itemView.myMessageLayout.visibility = View.VISIBLE
             holder.itemView.otherMessageLayout.visibility = View.GONE
-            holder.itemView.myMessageTextView.text = message.message
-
-            /*if(message.imgUrl != ""){
-                var imagen = Uri.parse(message.imgUrl)
 
 
-                holder.itemView.myImage.setImageURI(imagen)
-                //holder.itemView.imageView4.setImageURI(imagen)
-            }*/
-            if(message.imgUrl != ""){
-                var imageRef = storageRef.child("raul.rrbg@gmail.com/1.jpg")
+            if(message.message.toString() == ""){
+                holder.itemView.myMessageTextView.visibility = View.GONE
+            } else{
+                holder.itemView.myMessageTextView.text = message.message
+            }
+
+            if(message.imgUrl != "" ){
+                var imageRef = storageRef.child("${message.from}/${message.numImg}.jpg")
 
                 val ONE_MEGABYTE: Long = 1024 * 1024
 
@@ -75,15 +77,74 @@ class MessageAdapter(private val user: String): RecyclerView.Adapter<MessageAdap
 
                     } else{
                         holder.itemView.myImage.setImageBitmap(bitmap)
+
+                        print("Sí jalo xd")
+
                     }
+
 
                 }.addOnFailureListener{
 
                 }
+            } else{
+                message.numImg=0
             }
+            //holder.itemView.myMessageTextView.text = message.message
+
+            /*if(message.imgUrl != ""){
+                var imagen = Uri.parse(message.imgUrl)
+
+
+                holder.itemView.myImage.setImageURI(imagen)
+                //holder.itemView.imageView4.setImageURI(imagen)
+            }*/
 
         } else {
-            holder.itemView.myMessageLayout.visibility = View.GONE
+
+
+            val db = FirebaseFirestore.getInstance()
+            val docref = db.collection("Usuarios").document(message.from)
+
+
+            docref.get().addOnSuccessListener {
+                val user2 = it.toObject<UsuarioClass>()
+
+                holder.itemView.myMessageLayout.visibility = View.GONE
+                holder.itemView.otherMessageLayout.visibility = View.VISIBLE
+
+                holder.itemView.otherMessageName.text = message.from
+                //holder.itemView.othersMessageTextView.text = message.message
+                if(message.message.toString() == ""){
+                    holder.itemView.othersMessageTextView.visibility = View.GONE
+                } else{
+                    holder.itemView.othersMessageTextView.text = message.message
+                }
+
+                if(message.imgUrl != "" ){
+                    var imageRef = storageRef.child("${message.from}/${message.numImg}.jpg")
+
+                    val ONE_MEGABYTE: Long = 1024 * 1024
+
+                    imageRef.getBytes(ONE_MEGABYTE).addOnSuccessListener {
+                        val bitmap = BitmapFactory.decodeByteArray(it, 0, it.size)
+                        if(bitmap==null){
+
+                        } else{
+                            holder.itemView.otherImage.setImageBitmap(bitmap)
+
+                            print("Sí jalo xd")
+
+                        }
+
+
+                    }.addOnFailureListener{
+
+                    }
+                } else{
+                    message.numImg=0
+                }
+            }
+        /*holder.itemView.myMessageLayout.visibility = View.GONE
             holder.itemView.otherMessageLayout.visibility = View.VISIBLE
 
             holder.itemView.otherMessageName.text = message.from
@@ -105,8 +166,9 @@ class MessageAdapter(private val user: String): RecyclerView.Adapter<MessageAdap
                 }.addOnFailureListener{
 
                 }
-            }
+            }*/
         }
+
 
     }
 
