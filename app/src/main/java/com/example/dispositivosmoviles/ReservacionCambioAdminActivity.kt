@@ -19,6 +19,7 @@ class ReservacionCambioAdminActivity : AppCompatActivity() {
         setContentView(R.layout.activity_reservacion_cambio_admin)
         val bundle: Bundle? = intent.extras
         val email:String? = bundle?.getString("email")
+        val codigo:String? = bundle?.getString("codigo")
 
         imageButton9.setOnClickListener {
             val ho = Intent(this, InformacionClienteReservacionActivity::class.java).apply {
@@ -28,11 +29,11 @@ class ReservacionCambioAdminActivity : AppCompatActivity() {
             startActivity(ho)
         }
 
-        infrese(email ?: "")
+        infrese(email ?: "", codigo ?: "")
 
         button3.setOnClickListener {
             val db = FirebaseFirestore.getInstance()
-            db.collection("Reservacion").document(email.toString())
+            db.collection("Reservacion").document(email.toString()).collection("Reserve").document(codigo.toString())
                 .delete()
                 .addOnSuccessListener { showAlertEmail2() }
                 .addOnFailureListener {  }
@@ -83,9 +84,9 @@ class ReservacionCambioAdminActivity : AppCompatActivity() {
         }
         return super.onKeyDown(keyCode, event)
     }
-    private fun infrese(email: String){
+    private fun infrese(email: String, codigo: String){
         val db = FirebaseFirestore.getInstance()
-        val doc = db.collection("Reservacion").document(email)
+        val doc = db.collection("Reservacion").document(email).collection("Reserve").document(codigo)
         doc.get()
             .addOnSuccessListener {
                 val user = it.toObject<ReservacionClassClass>()
@@ -110,9 +111,9 @@ class ReservacionCambioAdminActivity : AppCompatActivity() {
                 val checkin = switch1.isChecked
                 val checkout = switch2.isChecked
 
-                var usuarioNuevo = ReservacionClassClass(email, fechafin, fechainicio, notas, "8", checkin, checkout)
+                var usuarioNuevo = ReservacionClassClass(email, fechafin, fechainicio, notas, "8", checkin, checkout,codigo)
                 showAlertEmail()
-                db.collection("Reservacion").document(email).set(usuarioNuevo)
+                db.collection("Reservacion").document(email).collection("Reserve").document(codigo).set(usuarioNuevo)
             }
             else{
                 showAlert()

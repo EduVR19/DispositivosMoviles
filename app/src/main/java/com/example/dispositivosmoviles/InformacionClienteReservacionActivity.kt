@@ -31,20 +31,26 @@ class InformacionClienteReservacionActivity : AppCompatActivity() {
         info(email ?: "")
 
         button7.setOnClickListener {
-            val db = FirebaseFirestore.getInstance()
-            val d = db.collection("Reservacion").document(email.toString())
-            d.get().addOnSuccessListener {
-                val user = it.toObject<ReservacionClassClass>()
-                if (user != null) {
-                    val homeIn = Intent(this, ReservacionCambioAdminActivity::class.java).apply {
-                        putExtra("email", email)
+            if (codigo.text.isNotEmpty()) {
+                val db = FirebaseFirestore.getInstance()
+                val d = db.collection("Reservacion").document(email.toString()).collection("Reserve").document(codigo.text.toString())
+                d.get().addOnSuccessListener {
+                    val user = it.toObject<ReservacionClassClass>()
+                    if (user != null) {
+                        val homeIn =
+                            Intent(this, ReservacionCambioAdminActivity::class.java).apply {
+                                putExtra("email", email)
+                                putExtra("codigo", codigo.text.toString())
+                            }
+                        startActivity(homeIn)
+                        // putExtra("provider", provider.name)
+                    } else {
+                        showAlertReservacion()
                     }
-                    startActivity(homeIn)
-                    // putExtra("provider", provider.name)
                 }
-                else{
-                    showAlertReservacion()
-                }
+            }
+            else {
+                showAlertReservacion()
             }
         }
 
@@ -143,19 +149,5 @@ class InformacionClienteReservacionActivity : AppCompatActivity() {
             .addOnSuccessListener {  }
             .addOnFailureListener {  }
     }
-    private fun showAlertEmail2()
-    {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Registro exitoso")
-        builder.setMessage("Cambio la informacion")
-        builder.setPositiveButton("Aceptar", DialogInterface.OnClickListener { dialog, id ->
-            // Mandar de nuevo a la pantalla de login
-            val loginIntent = Intent(this, ListadereserAdminActivity::class.java)
-            startActivity(loginIntent)
 
-        })
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
-
-    }
 }

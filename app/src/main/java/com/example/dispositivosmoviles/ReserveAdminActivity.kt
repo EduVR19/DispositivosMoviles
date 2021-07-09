@@ -60,11 +60,12 @@ class ReserveAdminActivity : AppCompatActivity() {
                     val cor = clienteeditt.text.toString()
                     val diaf = fechafin.text.toString()
                     val diai = fechainicioedit.text.toString()
+                    val codi = (0..100000).random().toString()
 
                     val not = notaseditt.text.toString()
-                    var reservacion = ReservacionClassClass(cor,diaf, diai, not,"8", false, false)
+                    var reservacion = ReservacionClassClass(cor,diaf, diai, not,"8", false, false, codi)
 
-                    db.collection("Reservacion").document(clienteee).collection("Reserve").document().set(reservacion)
+                    db.collection("Reservacion").document(clienteee).collection("Reserve").document(codi).set(reservacion)
 
                     showAlertEmail()
                 }

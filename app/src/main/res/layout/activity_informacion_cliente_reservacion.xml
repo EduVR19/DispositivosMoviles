@@ -43,7 +43,7 @@
         <LinearLayout
             android:id="@+id/linearLayout9"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="571dp"
             android:orientation="vertical">
 
             <TextView
@@ -152,6 +152,19 @@
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="16dp" />
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Codigo de reservación para buscar" />
+
+            <EditText
+                android:id="@+id/codigo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" />
 
         </LinearLayout>
 

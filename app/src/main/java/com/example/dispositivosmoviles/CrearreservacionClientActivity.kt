@@ -70,9 +70,11 @@ class CrearreservacionClientActivity : AppCompatActivity() {
                     val diaf = fechafin2.text.toString()
                     val diai = fechainicioedit2.text.toString()
                     val not = notaseditt2.text.toString()
-                    var reservacion = ReservacionClassClass(corr,diaf, diai, not, "8", false, false)
 
-                    db.collection("Reservacion").document(email).collection("Reserve").document().set(reservacion)
+                    val codi =(0..100000).random().toString()
+                    var reservacion = ReservacionClassClass(corr,diaf, diai, not, "8", false, false, codi)
+
+                    db.collection("Reservacion").document(email).collection("Reserve").document(codi).set(reservacion)
 
                     showAlertEmail()
                 }
