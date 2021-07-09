@@ -4,6 +4,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.KeyEvent
 import androidx.appcompat.app.AlertDialog
 import androidx.core.util.rangeTo
@@ -36,6 +37,7 @@ class ReservacionCambioAdminActivity : AppCompatActivity() {
                 .addOnSuccessListener { showAlertEmail2() }
                 .addOnFailureListener {  }
         }
+
 
         //Date picker
         fechainieditt.setOnClickListener { showDatePickerDialog() }

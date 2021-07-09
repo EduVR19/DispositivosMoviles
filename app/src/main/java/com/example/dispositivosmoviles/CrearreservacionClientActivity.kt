@@ -72,7 +72,7 @@ class CrearreservacionClientActivity : AppCompatActivity() {
                     val not = notaseditt2.text.toString()
                     var reservacion = ReservacionClassClass(corr,diaf, diai, not, "8", false, false)
 
-                    db.collection("Reservacion").document(email).set(reservacion)
+                    db.collection("Reservacion").document(email).collection("Reserve").document().set(reservacion)
 
                     showAlertEmail()
                 }
