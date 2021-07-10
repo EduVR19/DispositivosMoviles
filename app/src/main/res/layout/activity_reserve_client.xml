@@ -35,7 +35,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/buttondos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
@@ -53,124 +52,12 @@
             android:layout_width="match_parent"
             android:layout_height="16dp" />
 
-        <TextView
-            android:id="@+id/TextView16"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleViewReserve"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/datos_reservacion"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="18sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="16dp" />
-
-        <TextView
-            android:id="@+id/diastextv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="@string/hora_de_entrada"
-            android:textColor="#000000"
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/ffff"
-            android:layout_width="match_parent"
-            android:layout_height="31dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
-            android:background="#D3C2C2"
-            android:backgroundTint="#F4EBEB"
-            android:padding="5dp"
-            android:text="TextView" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="12dp" />
-
-        <TextView
-            android:id="@+id/diastextv2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="@string/hora_de_salida"
-            android:textColor="#000000"
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/horaentrada2"
-            android:layout_width="match_parent"
-            android:layout_height="31dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
-            android:background="#D3C2C2"
-            android:backgroundTint="#F4EBEB"
-            android:padding="5dp"
-            android:text="TextView" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="12dp" />
-
-        <TextView
-            android:id="@+id/fechaitextv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="@string/fecha_de_inicio"
-            android:textColor="#000000"
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/fechainicioview"
-            android:layout_width="match_parent"
-            android:layout_height="31dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
-            android:background="#D3C2C2"
-            android:backgroundTint="#F4EBEB"
-            android:padding="5dp"
-            android:text="TextView" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="12dp" />
-
-        <TextView
-            android:id="@+id/fechaftextv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="@string/fecha_de_fin"
-            android:textColor="#000000"
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/fechafinviw"
-            android:layout_width="match_parent"
-            android:layout_height="31dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
-            android:background="#D3C2C2"
-            android:backgroundTint="#F4EBEB"
-            android:padding="5dp"
-            android:text="TextView" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent">
+            tools:itemCount="2"
+            tools:listitem="@layout/item_reserve_client" />
 
     </LinearLayout>
 
@@ -180,7 +67,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="100dp"
         android:background="@drawable/custom_button"
         android:text="@string/crear_reservacion"
         app:layout_constraintBottom_toBottomOf="parent"
