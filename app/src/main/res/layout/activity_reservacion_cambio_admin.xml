@@ -6,67 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".ReservacionCambioAdminActivity">
 
-    <Button
-        android:id="@+id/button3uuu2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/guardar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout9" />
-
-    <ImageButton
-        android:id="@+id/imageButton9"
-        style="@style/Widget.AppCompat.ImageButton"
-        android:layout_width="60dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/textView28"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:srcCompat="@drawable/ic_back"
-        app:tint="#DB873E" />
-
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="304dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="16dp"
-        android:text="Reservacion"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.85"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"
+        layout="@layout/activity_nav_bar"
         android:layout_width="412dp"
         android:layout_height="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/imageButton9"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="60dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/green"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:srcCompat="@drawable/ic_left_arrow__1_"
+        app:tint="@color/white" />
+
     <LinearLayout
         android:id="@+id/linearLayout8"
-        android:layout_width="386dp"
-        android:layout_height="411dp"
+        android:layout_width="315dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/button3uuu2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView28">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:text="Reservación"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="34sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="32dp" />
 
         <TextView
             android:id="@+id/textView29"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/correo_cliente" />
+            android:text="@string/correo_cliente"
+            android:textColor="#000000"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/gmail"
@@ -81,7 +74,9 @@
             android:id="@+id/textView37"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/fecha_de_inicio" />
+            android:text="@string/fecha_de_inicio"
+            android:textColor="#000000"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/fechaini"
@@ -92,16 +87,18 @@
             android:id="@+id/fechainieditt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
             android:clickable="false"
-            android:focusable="false"/>
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/textView39"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/fecha_de_fin" />
+            android:text="@string/fecha_de_fin"
+            android:textColor="#000000"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/fechafinn"
@@ -112,16 +109,18 @@
             android:id="@+id/fechafineditt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
             android:clickable="false"
-            android:focusable="false"/>
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/textView42"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/notas" />
+            android:text="@string/notas"
+            android:textColor="#000000"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/notaas"
@@ -135,26 +134,79 @@
             android:ems="10"
             android:inputType="textPersonName" />
 
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="199dp"
-            android:layout_height="40dp"
-            android:text="Check in" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-        <Switch
-            android:id="@+id/switch2"
-            android:layout_width="198dp"
-            android:layout_height="38dp"
-            android:text="Check out" />
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="199dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="Check in"
+                android:textSize="16sp" />
+
+            <Switch
+                android:id="@+id/switch2"
+                android:layout_width="198dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:text="Check out"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_button"
+                    android:text="@string/borrar" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button3uuu2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_button"
+                    android:text="@string/guardar" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/borrar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button3uuu2"
-        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

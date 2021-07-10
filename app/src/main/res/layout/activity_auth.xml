@@ -8,7 +8,12 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
+        layout="@layout/activity_nav_bar"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -137,4 +142,5 @@
             android:textAlignment="center" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

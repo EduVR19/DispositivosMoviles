@@ -91,6 +91,10 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_button"
             android:text="@string/crear_reservacion" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

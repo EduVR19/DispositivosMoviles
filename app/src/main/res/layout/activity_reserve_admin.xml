@@ -30,10 +30,10 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="385dp"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,9 +106,9 @@
             android:layout_marginRight="20dp"
             android:background="#D3C2C2"
             android:backgroundTint="#F4EBEB"
-            android:padding="5dp"
             android:clickable="false"
-            android:focusable="false"/>
+            android:focusable="false"
+            android:padding="5dp" />
 
         <Space
             android:layout_width="match_parent"
@@ -157,22 +157,32 @@
             android:layout_marginRight="20sp"
             android:background="#D3C2C2"
             android:backgroundTint="#F4EBEB"
-            android:padding="5dp"
             android:clickable="false"
-            android:focusable="false"/>
+            android:focusable="false"
+            android:padding="5dp" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="32dp" />
 
-        <Button
-            android:id="@+id/buttonreserve"
+        <LinearLayout
+            android:id="@+id/linearLayout14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"
-            android:background="@drawable/custom_button"
-            android:text="@string/crear_reservacion" />
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonreserve"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_button"
+                android:text="@string/crear_reservacion" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp" />
+        </LinearLayout>
 
     </LinearLayout>
 
