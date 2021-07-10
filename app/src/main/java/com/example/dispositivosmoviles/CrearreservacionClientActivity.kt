@@ -73,7 +73,7 @@ class CrearreservacionClientActivity : AppCompatActivity() {
 
                     val codi =(0..100000).random().toString()
                     var reservacion = ReservacionClassClass(corr,diaf, diai, not, "8", false, false, codi)
-
+                    db.collection("Reservacion").document(email).set(reservacion)
                     db.collection("Reservacion").document(email).collection("Reserve").document(codi).set(reservacion)
 
                     showAlertEmail()

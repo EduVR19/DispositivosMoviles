@@ -64,7 +64,7 @@ class ReserveAdminActivity : AppCompatActivity() {
 
                     val not = notaseditt.text.toString()
                     var reservacion = ReservacionClassClass(cor,diaf, diai, not,"8", false, false, codi)
-
+                    db.collection("Reservacion").document(clienteee).set(reservacion)
                     db.collection("Reservacion").document(clienteee).collection("Reserve").document(codi).set(reservacion)
 
                     showAlertEmail()

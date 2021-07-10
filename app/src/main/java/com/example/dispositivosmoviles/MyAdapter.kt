@@ -20,6 +20,7 @@ class MyAdapter(private val userList: ArrayList<User>) : RecyclerView.Adapter<My
         holder.fechafin.text = user.fechafin
         holder.fechainicio.text = user.fechainicio
         holder.nota.text = user.nota
+        holder.codigo.text = user.codigo
     }
 
     override fun getItemCount(): Int {
@@ -31,6 +32,7 @@ class MyAdapter(private val userList: ArrayList<User>) : RecyclerView.Adapter<My
         var fechafin: TextView = itemView.findViewById(R.id.finNameText)
         var fechainicio: TextView = itemView.findViewById(R.id.inicioNameText)
         var nota: TextView = itemView.findViewById(R.id.notasNameText)
+        var codigo: TextView = itemView.findViewById(R.id.codigosNameText)
 
     }
 

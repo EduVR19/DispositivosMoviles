@@ -56,25 +56,31 @@ class ListadereserAdminActivity : AppCompatActivity() {
     
     private fun EventChangeListener() {
         db = FirebaseFirestore.getInstance()
-        db.collection("Reservacion").
-                addSnapshotListener(object : EventListener<QuerySnapshot>{
-                    override fun onEvent(
-                        value: QuerySnapshot?,
-                        error: FirebaseFirestoreException?
-                    ) {
-                        if (error != null){
-                            Log.e("Firestore Error", error.message.toString())
-                            return
-                        }
-                        for (dc : DocumentChange in value?.documentChanges!!){
-                            if (dc.type == DocumentChange.Type.ADDED){
-                                userArrayList.add(dc.document.toObject(User::class.java))
+        db.collection("Reservacion")
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    db.collection("Reservacion").document(document.id).collection("Reserve").
+                    addSnapshotListener(object : EventListener<QuerySnapshot>{
+                        override fun onEvent(
+                            value: QuerySnapshot?,
+                            error: FirebaseFirestoreException?
+                        ) {
+                            if (error != null){
+                                Log.e("Firestore Error", error.message.toString())
+                                return
                             }
-                        }
+                            for (dc : DocumentChange in value?.documentChanges!!){
+                                if (dc.type == DocumentChange.Type.ADDED){
+                                    userArrayList.add(dc.document.toObject(User::class.java))
+                                }
+                            }
 
-                        myAdapter.notifyDataSetChanged()
-                    }
-                })
+                            myAdapter.notifyDataSetChanged()
+                        }
+                    })
+                }
+            }
     }
 
 

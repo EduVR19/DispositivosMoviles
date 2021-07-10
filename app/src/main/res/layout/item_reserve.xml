@@ -6,8 +6,8 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="82dp"
+        android:layout_width="349dp"
+        android:layout_height="96dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="16dp"
@@ -63,6 +63,15 @@
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
+                <TextView
+                    android:id="@+id/textView41"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Codigo:"
+                    android:textAlignment="textStart"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -97,6 +106,14 @@
 
                 <TextView
                     android:id="@+id/notasNameText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textAlignment="textStart"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/codigosNameText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="TextView"
