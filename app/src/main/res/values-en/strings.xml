@@ -6,6 +6,8 @@
     <string name="emailHint">Email</string>
     <string name="passHint">Password</string>
     <string name="logInButton">Log in</string>
+    <string name="aceptar">Accept</string>
+    <string name="otrasOpciones">Other options</string>
     <string name="register">Register</string>
     <string name="forgotPassword">Forgot password?</string>
     <string name="changeLanguage">Change language</string>

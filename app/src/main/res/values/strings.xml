@@ -7,6 +7,8 @@
     <string name="emailHint">Correo</string>
     <string name="passHint">Contraseña</string>
     <string name="logInButton">Acceder</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="otrasOpciones">Otras opciones</string>
     <string name="register">Registrar</string>
     <string name="forgotPassword">¿Has olvidado tu contraseña?</string>
     <string name="changeLanguage">Cambiar idioma</string>
@@ -35,7 +37,7 @@
     <string name="Clients">Clientes</string>
     <string name="notifications">Notificaciones</string>
     <string name="ver_chat">Ver chat</string>
-    <string name="admin">"Administrador "</string>
+    <string name="admin">Administrador "</string>
     <string name="crear_reservacion">Crear reservación</string>
     <string name="datos_reservacion">Datos de la reservación</string>
     <string name="fecha_de_inicio">Fecha de Inicio</string>

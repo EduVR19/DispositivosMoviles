@@ -91,7 +91,7 @@ class ListOfChatsActivity : AppCompatActivity() {
 
         val chat = Chat(
             id = chatId,
-            name = "Chat con $otherUser",
+            name = "$otherUser",
             Usuarios = Usuarios
         )
 

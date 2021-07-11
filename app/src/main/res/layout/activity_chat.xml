@@ -72,9 +72,8 @@
 
         <Button
             android:id="@+id/galeriaButton"
-            android:layout_width="60dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="5dp"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
             android:background="@drawable/custom_button"
             android:text="Galeria" />
 
@@ -82,7 +81,6 @@
             android:id="@+id/messageTextField"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
             android:ems="10"
             android:hint="@string/menssageHint"
             android:inputType="textPersonName" />

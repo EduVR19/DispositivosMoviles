@@ -31,76 +31,108 @@
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
-        android:id="@+id/linearLayout7"
-        android:layout_width="205dp"
-        android:layout_height="275dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.327">
-
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:height="70dp"
-            android:background="@drawable/custom_button"
-            android:text="@string/ver_reservaciones"
-            app:cornerRadius="30dp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
-
-        <Button
-            android:id="@+id/chatButtonAdmin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:height="70dp"
-            android:background="@drawable/custom_button"
-            android:text="@string/ver_chats"
-            app:cornerRadius="30dp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
-
-        <Button
-            android:id="@+id/logOutAdmin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:height="70dp"
-            android:background="@drawable/custom_button"
-            android:text="@string/logOutButton"
-            app:cornerRadius="30dp" />
-    </LinearLayout>
-
-    <EditText
-        android:id="@+id/admincorreo"
-        android:layout_width="270dp"
-        android:layout_height="43dp"
-        android:layout_marginBottom="28dp"
-        android:ems="10"
-        android:hint="@string/emailText"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/crearadminbuton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
-        app:layout_constraintVertical_bias="0.969" />
-
-    <Button
-        android:id="@+id/crearadminbuton"
-        android:layout_width="wrap_content"
+        android:layout_width="265dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:text="@string/crear_admin"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="vertical"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+        <LinearLayout
+            android:id="@+id/linearLayout17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView46"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/crear_admin"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/admincorreo"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:ems="10"
+                android:hint="@string/emailText"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/crearadminbuton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/custom_button"
+                android:text="@string/aceptar" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="32dp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/textView45"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/otrasOpciones"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="50dp"
+                android:background="@drawable/custom_button"
+                android:text="@string/ver_reservaciones"
+                app:cornerRadius="30dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+            <Button
+                android:id="@+id/chatButtonAdmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="50dp"
+                android:background="@drawable/custom_button"
+                android:text="@string/ver_chats"
+                app:cornerRadius="30dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+            <Button
+                android:id="@+id/logOutAdmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="50dp"
+                android:background="@drawable/custom_button"
+                android:text="@string/logOutButton"
+                app:cornerRadius="30dp" />
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,8 +15,10 @@
         <activity android:name=".InformacionClienteReservacionActivity" />
         <activity android:name=".CrearreservacionClientActivity" />
         <activity android:name=".ReserveClientActivity" />
-        <activity android:name=".ListadereserAdminActivity" />
-        <activity android:name=".activities.ChatActivity" />
+        <activity android:name=".ListadereserAdminActivity"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".activities.ChatActivity"
+            android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".activities.ListOfChatsAdminActivity" />
         <activity android:name=".activities.ListOfChatsActivity" />
         <activity android:name=".MainClientActivity" />

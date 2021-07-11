@@ -83,7 +83,9 @@
             android:layout_marginRight="20sp"
             android:background="#D3C2C2"
             android:backgroundTint="#F4EBEB"
-            android:padding="5dp" />
+            android:padding="5dp"
+            android:clickable="false"
+            android:focusable="false"/>
 
         <Space
             android:layout_width="match_parent"
