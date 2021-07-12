@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DispositivosMoviles</string>
+    <string name="app_name">Break4Pets</string>
     <string name="DispositivosMoviles">DispositivosMoviles</string>
     <!-- Esto es la pantalla Auth-->
     <string name="login">Login</string>
